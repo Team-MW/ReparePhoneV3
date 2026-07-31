@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Rachat & Reprise de Téléphones à Toulouse',
-  description: 'Revendez votre ancien smartphone au meilleur prix chez La Brigade Mobile. Estimation gratuite, tous états acceptés (écran cassé). Paiement cash immédiat !',
+  description: 'Revendez votre ancien smartphone au meilleur prix chez Répare Phone. Estimation gratuite, tous états acceptés (écran cassé). Paiement cash immédiat !',
 };
 
 import { Recycle, DollarSign, Smartphone } from 'lucide-react';
@@ -22,7 +22,7 @@ export default function Reprise() {
             <h1 className={styles.title}>Revendez votre <span className="text-gradient">téléphone</span> au meilleur prix.</h1>
             <p className={styles.subtitle}>
               <strong>Récupérez jusqu'à 600€ en revendant votre ancien téléphone !</strong><br/><br/>
-              La Brigade Mobile rachète vos anciens smartphones, tablettes et ordinateurs. 
+              Répare Phone rachète vos anciens smartphones, tablettes et ordinateurs. 
               Qu'ils soient fonctionnels ou cassés, donnez-leur une seconde vie et repartez avec du cash !
             </p>
             <div className={styles.badges}>
@@ -64,7 +64,7 @@ export default function Reprise() {
           <div className={styles.seoText}>
             <h3>Rachat d'iPhone (Apple) à Paris et en France</h3>
             <p>
-              Vous possédez un iPhone 15, iPhone 14 Pro Max, iPhone 13, iPhone 12 ou même un modèle plus ancien comme l'iPhone 11 ou le XR ? La Brigade Mobile est spécialisée dans le rachat de produits Apple. L'écosystème Apple conserve une excellente valeur sur le marché de l'occasion. Nous vous proposons les meilleurs tarifs de reprise, que votre vitre arrière soit brisée, que le Face ID ne fonctionne plus, ou que la capacité de la batterie soit faible.
+              Vous possédez un iPhone 15, iPhone 14 Pro Max, iPhone 13, iPhone 12 ou même un modèle plus ancien comme l'iPhone 11 ou le XR ? Répare Phone est spécialisée dans le rachat de produits Apple. L'écosystème Apple conserve une excellente valeur sur le marché de l'occasion. Nous vous proposons les meilleurs tarifs de reprise, que votre vitre arrière soit brisée, que le Face ID ne fonctionne plus, ou que la capacité de la batterie soit faible.
             </p>
             <h3>Reprise de smartphones Samsung Galaxy, Xiaomi et autres marques</h3>
             <p>

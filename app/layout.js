@@ -9,15 +9,15 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata = {
   title: {
-    default: 'La Brigade Mobile | Réparation de Téléphones à Toulouse',
-    template: '%s | La Brigade Mobile'
+    default: 'Répare Phone | Réparation de Téléphones à Toulouse',
+    template: '%s | Répare Phone'
   },
   description: "Réparation express de téléphones à Toulouse et à domicile. iPhone, Samsung, Xiaomi... Écran, batterie. Pièces Premium garanties 1 an. Devis gratuit !",
   openGraph: {
-    title: 'La Brigade Mobile | Réparation de Téléphones à Toulouse',
+    title: 'Répare Phone | Réparation de Téléphones à Toulouse',
     description: 'Réparation express de smartphones à Toulouse et à domicile. Intervention en 30 min, pièces premium garanties 1 an. Contactez-nous !',
-    url: 'https://labrigademobile.fr',
-    siteName: 'La Brigade Mobile',
+    url: 'https://reparephone.fr',
+    siteName: 'Répare Phone',
     images: [
       {
         url: '/images.jpg',

@@ -114,7 +114,7 @@ export default function Domicile() {
           <div className={styles.seoTextGlass}>
             <h3>Réparation iPhone à domicile et au bureau</h3>
             <p>
-              Votre temps est précieux. C'est pourquoi La Brigade Mobile propose un service de réparation d'iPhone directement à domicile. Que vous habitiez en centre-ville ou en banlieue, nos techniciens certifiés se déplacent pour effectuer le changement d'écran de votre iPhone 14, ou remplacer la batterie de votre iPhone 12 Pro. Plus besoin de patienter des heures en magasin, le service est rapide, sécurisé et garanti 1 an.
+              Votre temps est précieux. C'est pourquoi Répare Phone propose un service de réparation d'iPhone directement à domicile. Que vous habitiez en centre-ville ou en banlieue, nos techniciens certifiés se déplacent pour effectuer le changement d'écran de votre iPhone 14, ou remplacer la batterie de votre iPhone 12 Pro. Plus besoin de patienter des heures en magasin, le service est rapide, sécurisé et garanti 1 an.
             </p>
             <h3>Intervention sur Samsung Galaxy, Xiaomi et toutes marques</h3>
             <p>

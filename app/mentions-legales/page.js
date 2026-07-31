@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Mentions Légales | La Brigade Mobile',
-  description: 'Mentions légales du site La Brigade Mobile, réparation de téléphones à Toulouse.',
+  title: 'Mentions Légales | Répare Phone',
+  description: 'Mentions légales du site Répare Phone, réparation de téléphones à Toulouse.',
 };
 
 export default function MentionsLegales() {
@@ -11,10 +11,10 @@ export default function MentionsLegales() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', color: 'var(--foreground)' }}>
         <section>
           <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>1. Éditeur du site</h2>
-          <p>Le site <strong>La Brigade Mobile</strong> est édité par l'entreprise La Brigade Mobile.</p>
+          <p>Le site <strong>Répare Phone</strong> est édité par l'entreprise Répare Phone.</p>
           <p>Siège social : 65 Route de Blagnac, 31300 Toulouse</p>
           <p>Téléphone : 07 56 91 65 93</p>
-          <p>Email : labrigademobile31@gmail.com</p>
+          <p>Email : contact@reparephone.fr</p>
         </section>
 
         <section>
@@ -30,7 +30,7 @@ export default function MentionsLegales() {
 
         <section>
           <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>4. Limitation de responsabilité</h2>
-          <p>La Brigade Mobile s'efforce d'assurer au mieux de ses possibilités l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger à tout moment et sans préavis le contenu. Toutefois, La Brigade Mobile ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à la disposition sur ce site.</p>
+          <p>Répare Phone s'efforce d'assurer au mieux de ses possibilités l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger à tout moment et sans préavis le contenu. Toutefois, Répare Phone ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à la disposition sur ce site.</p>
         </section>
       </div>
     </div>

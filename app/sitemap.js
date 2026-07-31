@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://labrigademobile.fr';
+  const baseUrl = 'https://reparephone.fr';
 
   return [
     {
