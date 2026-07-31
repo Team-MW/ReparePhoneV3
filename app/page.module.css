@@ -1,0 +1,703 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Pour contenir les bulles qui débordent */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; 
+}
+
+/* Bulles du Hero géantes et animées (Style Reprise mais en Bleu) */
+.giantBlobTopRight {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 60vw;
+  background: var(--surface);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 1; /* Ramené au premier plan */
+  border: 1px solid var(--border);
+  animation: blobMorph 15s infinite alternate ease-in-out;
+}
+
+.giantBlobBottomLeft {
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 60vw;
+  height: 60vw;
+  background: #e0f2fe; /* Teinte bleue plus visible */
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: 1; /* Ramené au premier plan */
+  animation: blobMorph2 12s infinite alternate ease-in-out;
+}
+
+@keyframes blobMorph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  100% { border-radius: 70% 30% 40% 60% / 50% 70% 30% 50%; }
+}
+
+@keyframes blobMorph2 {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  100% { border-radius: 30% 70% 60% 40% / 40% 60% 40% 60%; }
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem;
+  position: relative;
+  z-index: 2; /* Garde le texte au-dessus des bulles */
+}
+
+.heroText {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.heroImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+}
+
+.bulleDecoration {
+  position: absolute;
+  background: var(--primary);
+  width: 320px;
+  height: 320px;
+  border-radius: 50% 40% 60% 40% / 60% 50% 40% 50%;
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+
+.heroPhoneImage {
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+  width: auto;
+  height: 140%;
+  max-height: 800px;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+}
+
+.badgeImage {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+@keyframes floatPhone {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(10px) scale(1.02); }
+}
+
+@keyframes floatBulle {
+  0% { transform: translateY(0) rotate(-5deg); border-radius: 50% 40% 60% 40% / 60% 50% 40% 50%; }
+  100% { transform: translateY(-20px) rotate(0deg); border-radius: 40% 60% 50% 50% / 50% 40% 60% 40%; }
+}
+
+/* Services */
+.servicesSection {
+  position: relative;
+  padding-top: 8rem;
+}
+
+.cornerBubbleTopLeft {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 380px;
+  height: 380px;
+  background: var(--secondary); /* Noir/Bleu foncé */
+  border-radius: 0 60% 100% 0; /* Forme arrondie en haut à droite et en bas à droite */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  z-index: 1;
+}
+
+.bubbleTitle {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.floatingRepairImage {
+  position: absolute;
+  top: 25%;
+  left: 2%;
+  z-index: 0;
+  animation: floatPhone 6s ease-in-out infinite alternate;
+  opacity: 0.6;
+}
+
+.repairIllustration {
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+}
+
+.servicesContainer {
+  padding-left: 250px; /* Pour éviter la bulle */
+  position: relative;
+  z-index: 2;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform var(--transition-normal);
+  border: 1px solid var(--border);
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+}
+
+.serviceIcon {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  background: #f0f7ff;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.serviceTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.serviceDesc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Avantages */
+.advantagesSection {
+  position: relative;
+  background: #f8fafc;
+  margin-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+.cornerBubbleBottomRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: var(--primary); /* Bleu */
+  border-radius: 100% 0 0 0; /* Forme reliée à l'angle en bas à droite */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+.bubbleTitleWhite {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: right;
+}
+
+.advantagesContainer {
+  padding-right: 150px;
+  position: relative;
+  z-index: 2;
+}
+
+.advantagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  text-align: center;
+}
+
+.advCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 50% 40% 60% 40% / 50% 60% 40% 50%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+}
+
+.advIcon {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  background: #f0f7ff;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.advTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.advDesc {
+  color: var(--text-muted);
+}
+
+/* Hydrogel Section */
+.hydrogelSection {
+  position: relative;
+  padding: 8rem 0;
+  background: #ffffff;
+}
+
+.hydrogelContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hydrogelContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hydrogelTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+  line-height: 1.2;
+}
+
+.hydrogelSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hydrogelFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.hydrogelFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--secondary);
+}
+
+.hydrogelFeatures li strong {
+  font-weight: 700;
+}
+
+.hydrogelImageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 400px;
+}
+
+.hydrogelBlob {
+  position: absolute;
+  background: var(--primary);
+  width: 500px;
+  height: 500px;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: floatBulle 8s ease-in-out infinite alternate-reverse;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.hydrogelVideoContainer {
+  position: relative;
+  z-index: 2;
+  border-radius: 30px; /* Donne un effet arrondi comme un téléphone */
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  animation: floatPhone 6s ease-in-out infinite alternate;
+  background: #000;
+  border: 6px solid #fff; /* Cadre blanc style téléphone */
+}
+
+.hydrogelVideo {
+  display: block;
+  border-radius: 24px;
+}
+
+/* Avis Google Section */
+.reviewsSection {
+  padding: 6rem 0;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.reviewsHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.reviewsTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.reviewsSubtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.reviewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-color: #e2e8f0;
+  background: #fff;
+  color: var(--secondary);
+}
+
+.reviewBtn:hover {
+  background: #f8fafc;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Effet de fondu sur les bords */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollMarquee 45s linear infinite;
+  padding: 1rem 0;
+}
+
+.marqueeReverse {
+  animation-direction: reverse;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.reviewCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewAvatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.reviewInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewName {
+  font-weight: 700;
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.reviewStars {
+  font-size: 0.9rem;
+}
+
+.reviewText {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* S'arrête à la moitié, ce qui boucle parfaitement avec le tableau doublé */
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .heroButtons {
+    justify-content: center;
+  }
+  .heroImageContainer {
+    min-height: 400px;
+    width: 100%;
+  }
+  .floatingRepairImage {
+    display: none; /* Cacher sur mobile pour ne pas surcharger */
+  }
+  .servicesContainer {
+    padding-left: 0;
+    margin-top: 4rem;
+  }
+  .advantagesContainer {
+    padding-right: 0;
+    margin-bottom: 4rem;
+  }
+  .cornerBubbleTopLeft, .cornerBubbleBottomRight {
+    width: 250px;
+    height: 250px;
+  }
+  .bubbleTitle {
+    font-size: 2rem;
+  }
+  .hydrogelContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .hydrogelFeatures li {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heroButtons a {
+    width: 100%;
+    text-align: center;
+  }
+  .heroPhoneImage {
+    max-height: 400px;
+  }
+  .bulleDecoration {
+    width: 280px;
+    height: 280px;
+  }
+  .floatingBadge {
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatBadgeMobile 5s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floatBadgeMobile {
+    0% { transform: translate(-50%, 0px) scale(0.9); }
+    100% { transform: translate(-50%, 10px) scale(0.92); }
+  }
+  .hydrogelBlob {
+    width: 300px;
+    height: 300px;
+  }
+  .hydrogelTitle {
+    font-size: 2.2rem;
+  }
+  .inputGroup {
+    flex-direction: column;
+  }
+  .contactBubble {
+    padding: 2rem;
+    border-radius: 40px;
+  }
+  .giantBlobTopRight, .giantBlobBottomLeft {
+    width: 100vw;
+    height: 80vw;
+    opacity: 0.5; /* Rendre un peu plus discret sur mobile */
+  }
+  .reviewCard {
+    width: 300px;
+    padding: 1.5rem;
+  }
+}
+
+/* Notre Boutique Section */
+.boutiqueSection {
+  padding: 6rem 0;
+  background-color: #f8fafc;
+}
+
+.boutiqueHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.boutiqueTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.boutiqueDesc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.boutiqueGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.boutiqueInfo {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.boutiqueInfo h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.boutiqueInfo p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.mapBtn {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+}
+
+.mapContainer {
+  width: 100%;
+  min-height: 400px;
+}
+
+@media (max-width: 992px) {
+  .boutiqueGrid {
+    grid-template-columns: 1fr;
+  }
+  .boutiqueInfo {
+    padding: 2.5rem;
+  }
+  .mapContainer {
+    height: 350px;
+  }
+}

@@ -1,0 +1,109 @@
+.faqSection {
+  padding: 6rem 0;
+  background-color: var(--surface);
+  margin-top: auto;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.details {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: box-shadow var(--transition-fast);
+}
+
+.details:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  list-style: none; /* Enlève la flèche par défaut de <details> */
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--secondary);
+  background: #fff;
+  transition: color var(--transition-fast);
+}
+
+.summary::-webkit-details-marker {
+  display: none; /* Pour Safari */
+}
+
+.summary:hover {
+  color: var(--primary);
+}
+
+.icon {
+  color: var(--primary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* Animation de rotation de l'icône quand ouvert */
+.details[open] .summary .icon {
+  transform: rotate(180deg);
+}
+
+.details[open] .summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.answer {
+  padding: 1.5rem 2rem;
+  background: #fafafa;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .summary {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+  }
+  .answer {
+    padding: 1.2rem 1.5rem;
+  }
+}

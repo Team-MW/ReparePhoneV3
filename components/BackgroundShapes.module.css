@@ -1,0 +1,89 @@
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #050b14; /* Noir profond légèrement bleuté */
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+/* Forme 1 : Grand cercle bleu clair en haut à droite */
+.shape1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #0070f3 0%, rgba(0, 112, 243, 0) 70%);
+  top: -10%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+/* Forme 2 : Ovale bleu néon à gauche */
+.shape2 {
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(circle, #00f0ff 0%, rgba(0, 240, 255, 0) 70%);
+  bottom: 20%;
+  left: -20%;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation-delay: -5s;
+  animation-duration: 25s;
+}
+
+/* Forme 3 : Bleu foncé vibrant en bas à droite */
+.shape3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3b82f6 0%, rgba(59, 130, 246, 0) 70%);
+  bottom: -15%;
+  right: 10%;
+  animation-delay: -10s;
+  animation-duration: 22s;
+}
+
+/* Forme 4 : Petite touche cyan au centre */
+.shape4 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #0ea5e9 0%, rgba(14, 165, 233, 0) 70%);
+  top: 30%;
+  left: 40%;
+  opacity: 0.3;
+  animation-delay: -15s;
+  animation-duration: 30s;
+}
+
+.noiseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1) rotate(10deg);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
