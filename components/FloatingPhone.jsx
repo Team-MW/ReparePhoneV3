@@ -19,7 +19,7 @@ export default function FloatingPhone() {
   }, []);
 
   return (
-    <a href="tel:0756916593" className={styles.floatingBtn} aria-label="Appeler Répare Phone">
+    <a href="tel:0756916593" className={styles.floatingBtn} aria-label="Appeler ReparPhone">
       <div className={styles.iconContainer}>
         <PhoneCall size={28} />
       </div>

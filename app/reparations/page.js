@@ -226,7 +226,7 @@ export default function Reparations() {
              <div className={styles.seoContentGrid}>
                 <div className={styles.seoBlock}>
                    <h3>Réparation d'iPhone : Apple de A à Z</h3>
-                   <p>Vous avez fait tomber votre <strong>iPhone 15 Pro Max</strong> ou votre <strong>iPhone 14</strong> ? L'écran OLED est cassé ou affiche des lignes vertes ? Répare Phone est experte dans le remplacement d'écrans originaux ou compatibles de très haute qualité pour tous les modèles Apple. De l'<strong>iPhone 11</strong> classique jusqu'au tout dernier <strong>iPhone 15</strong>, nous assurons également le remplacement de la batterie lorsque votre appareil indique le message "Réparation requise". Nous intervenons aussi sur le changement de la vitre arrière (dos en verre), les problèmes de Face ID, et les connecteurs de charge défaillants (Lightning ou USB-C).</p>
+                   <p>Vous avez fait tomber votre <strong>iPhone 15 Pro Max</strong> ou votre <strong>iPhone 14</strong> ? L'écran OLED est cassé ou affiche des lignes vertes ? ReparPhone est experte dans le remplacement d'écrans originaux ou compatibles de très haute qualité pour tous les modèles Apple. De l'<strong>iPhone 11</strong> classique jusqu'au tout dernier <strong>iPhone 15</strong>, nous assurons également le remplacement de la batterie lorsque votre appareil indique le message "Réparation requise". Nous intervenons aussi sur le changement de la vitre arrière (dos en verre), les problèmes de Face ID, et les connecteurs de charge défaillants (Lightning ou USB-C).</p>
                 </div>
 
                 <div className={styles.seoBlock}>

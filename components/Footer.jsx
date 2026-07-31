@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.column}>
           <Image 
             src="/images.jpg" 
-            alt="Reparephone Logo" 
+            alt="ReparPhone Logo" 
             width={250} 
             height={75} 
             style={{ marginBottom: '1rem', objectFit: 'contain' }}
@@ -57,7 +57,7 @@ export default function Footer() {
             </li>
             <li className={styles.listItem}>
               <Mail className={styles.icon} size={18} />
-              <a href="mailto:contact@reparephone.fr" className={styles.navLink}>contact@reparephone.fr</a>
+              <a href="mailto:labrigademobile31@gmail.com" className={styles.navLink}>labrigademobile31@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -82,7 +82,7 @@ export default function Footer() {
         <div className={`container ${styles.relaisContainer}`}>
           <div className={styles.relaisText}>
             <h4 className={styles.relaisTitle}>Point de dépôt & retrait</h4>
-            <p>Répare Phone est votre point relais partenaire officiel <strong>Colissimo, DPD et Chronopost</strong> à Toulouse.</p>
+            <p>ReparPhone est votre point relais partenaire officiel <strong>Colissimo, DPD et Chronopost</strong> à Toulouse.</p>
           </div>
           <div className={styles.relaisLogos}>
             <Image src="/colissimo.jpg" alt="Point de dépôt Colissimo Toulouse" width={110} height={45} className={`${styles.relaisLogo} ${styles.logoScaleUp}`} />
@@ -98,7 +98,7 @@ export default function Footer() {
             <Link href="/mentions-legales" className={styles.navLink}>Mentions Légales</Link>
             <Link href="/politique-confidentialite" className={styles.navLink}>Politique de Confidentialité</Link>
           </div>
-          <p>&copy; {new Date().getFullYear()} Répare Phone. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} ReparPhone. Tous droits réservés.</p>
           <p style={{ fontSize: '0.9rem', marginTop: '-0.5rem' }}>
             Réalisée par <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" className={styles.navLink} style={{ textDecoration: 'underline' }}>microdidact</a>
           </p>

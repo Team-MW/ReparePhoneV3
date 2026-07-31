@@ -18,7 +18,7 @@ export default function FAQ({ customFaqs, title = "Foire Aux Questions (FAQ)", s
     },
     {
       question: "Rachetez-vous les téléphones cassés ou avec l'écran brisé ?",
-      answer: "Absolument ! Répare Phone rachète les smartphones (Apple, Samsung, Xiaomi...) dans n'importe quel état. Même si votre téléphone a pris l'eau (oxydation), que la vitre arrière est fissurée, ou que le téléphone ne s'allume plus, nous le reprenons pour recycler ses composants et vous offrons un paiement immédiat en cash."
+      answer: "Absolument ! ReparPhone rachète les smartphones (Apple, Samsung, Xiaomi...) dans n'importe quel état. Même si votre téléphone a pris l'eau (oxydation), que la vitre arrière est fissurée, ou que le téléphone ne s'allume plus, nous le reprenons pour recycler ses composants et vous offrons un paiement immédiat en cash."
     },
     {
       question: "Quelles marques de téléphones réparez-vous ?",

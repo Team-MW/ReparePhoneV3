@@ -94,8 +94,8 @@ export default function Contact() {
                 <Mail className={styles.icon} size={24} />
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:contact@reparephone.fr" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    <p>contact@reparephone.fr</p>
+                  <a href="mailto:labrigademobile31@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <p>labrigademobile31@gmail.com</p>
                   </a>
                 </div>
               </div>

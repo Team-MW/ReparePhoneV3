@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://reparephone.fr';
+  const baseUrl = 'https://reparphone.fr';
 
   return [
     {

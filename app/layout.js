@@ -9,15 +9,15 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata = {
   title: {
-    default: 'Répare Phone | Réparation de Téléphones à Toulouse',
-    template: '%s | Répare Phone'
+    default: 'ReparPhone | Réparation de Téléphones à Toulouse',
+    template: '%s | ReparPhone'
   },
   description: "Réparation express de téléphones à Toulouse et à domicile. iPhone, Samsung, Xiaomi... Écran, batterie. Pièces Premium garanties 1 an. Devis gratuit !",
   openGraph: {
-    title: 'Répare Phone | Réparation de Téléphones à Toulouse',
+    title: 'ReparPhone | Réparation de Téléphones à Toulouse',
     description: 'Réparation express de smartphones à Toulouse et à domicile. Intervention en 30 min, pièces premium garanties 1 an. Contactez-nous !',
-    url: 'https://reparephone.fr',
-    siteName: 'Répare Phone',
+    url: 'https://reparphone.fr',
+    siteName: 'ReparPhone',
     images: [
       {
         url: '/images.jpg',

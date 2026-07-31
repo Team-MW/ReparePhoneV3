@@ -25,7 +25,7 @@ export default function Header() {
         >
           <Image 
             src="/images.jpg" 
-            alt="Reparephone Logo" 
+            alt="ReparPhone Logo" 
             width={350} 
             height={100} 
             className={styles.logoImage} 

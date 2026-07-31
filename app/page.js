@@ -274,7 +274,7 @@ export default function Home() {
           
           <div className={styles.boutiqueGrid}>
             <div className={styles.boutiqueInfo}>
-              <h3>Répare Phone</h3>
+              <h3>ReparPhone</h3>
               <p>📍 65 Route de Blagnac<br/>31300 Toulouse</p>
               <p>Ligne <span className="bus-badge bus-l1">L1</span> <span className="bus-badge bus-70">70</span> - Arrêt "Cité Madrid"</p>
               <a 

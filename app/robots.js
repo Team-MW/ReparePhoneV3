@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://reparephone.fr/sitemap.xml',
+    sitemap: 'https://reparphone.fr/sitemap.xml',
   }
 }
