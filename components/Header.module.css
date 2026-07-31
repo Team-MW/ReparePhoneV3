@@ -26,11 +26,9 @@
 }
 
 .logoImage {
-  height: 80px;
+  height: 55px; /* Adjusted to fit inside 80px header with padding */
   width: auto;
   object-fit: contain;
-  transform: scale(1.6);
-  transform-origin: left center;
   position: relative;
   z-index: 10;
 }
@@ -73,9 +71,8 @@
 
 @media (max-width: 768px) {
   .logoImage {
-    transform: scale(1.7); /* Agrandissement visuel fort du logo */
-    transform-origin: left center; /* S'assure qu'il grandit vers la droite et pas hors de l'écran */
-    height: 50px; /* La hauteur physique reste petite pour ne pas élargir la nav bar */
+    height: 40px; /* Adjusted for mobile navbar */
+    width: auto;
   }
 
   .desktopNav {

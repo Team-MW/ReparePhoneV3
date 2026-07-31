@@ -98,16 +98,7 @@ export default function Home() {
               priority
             />
             
-            {/* Petit badge flottant stylé */}
-            <div className={styles.floatingBadge}>
-              <Image 
-                src="/badge.png" 
-                alt="Badge Répare Phone" 
-                width={150} 
-                height={150} 
-                className={styles.badgeImage}
-              />
-            </div>
+
 
           </div>
         </div>
