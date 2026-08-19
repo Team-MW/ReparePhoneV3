@@ -13,7 +13,7 @@ export default function Contact() {
     if (jotformContainerRef.current && !jotformContainerRef.current.querySelector('script')) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = 'https://form.jotform.com/jsform/262303988688373';
+      script.src = 'https://form.jotform.com/jsform/262146210090343';
       script.async = true;
       jotformContainerRef.current.appendChild(script);
 
