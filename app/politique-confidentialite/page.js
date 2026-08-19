@@ -1,38 +1,77 @@
+import styles from './page.module.css';
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Politique de Confidentialité | ReparPhone',
-  description: 'Politique de confidentialité et traitement des données personnelles par ReparPhone.',
+  description: 'Politique de confidentialité et gestion des données personnelles de ReparPhone Toulouse.',
 };
 
 export default function PolitiqueConfidentialite() {
   return (
-    <div className="container" style={{ paddingTop: '120px', paddingBottom: '80px', minHeight: '80vh' }}>
-      <h1 style={{ fontSize: '3rem', marginBottom: '2rem', color: 'var(--secondary)', fontWeight: '800' }}>Politique de Confidentialité</h1>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', color: 'var(--foreground)' }}>
-        <section>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>1. Collecte des données personnelles</h2>
-          <p>Les informations recueillies via nos formulaires (nom, prénom, numéro de téléphone, adresse email, modèle d'appareil) sont enregistrées par <strong>ReparPhone</strong> pour faciliter les échanges, la prise de rendez-vous et l'établissement de devis.</p>
-        </section>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <h1 className={styles.title}>Politique de Confidentialité</h1>
+        
+        <div className={styles.section}>
+          <h2>1. Introduction</h2>
+          <p>
+            Chez ReparPhone, nous accordons une grande importance à la confidentialité et à la sécurité de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre site web et nos services.
+          </p>
+        </div>
 
-        <section>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>2. Utilisation des données</h2>
-          <p>Les données collectées sont utilisées exclusivement par l'équipe de ReparPhone pour vous recontacter suite à votre demande. Elles ne sont en aucun cas vendues, cédées ou louées à des tiers à des fins commerciales.</p>
-        </section>
+        <div className={styles.section}>
+          <h2>2. Collecte des données</h2>
+          <p>Nous pouvons collecter les informations suivantes :</p>
+          <ul>
+            <li>Nom et prénom</li>
+            <li>Coordonnées (adresse e-mail, numéro de téléphone)</li>
+            <li>Informations sur votre appareil pour les devis et réparations</li>
+            <li>Données de navigation (cookies)</li>
+          </ul>
+        </div>
 
-        <section>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>3. Durée de conservation</h2>
-          <p>Les données sont conservées pendant la durée nécessaire au traitement de votre demande et à la relation commerciale qui peut en découler, conformément aux dispositions légales en vigueur.</p>
-        </section>
+        <div className={styles.section}>
+          <h2>3. Utilisation des données</h2>
+          <p>Vos données sont utilisées exclusivement pour :</p>
+          <ul>
+            <li>Traiter vos demandes de réparation ou de devis</li>
+            <li>Vous contacter concernant le suivi de vos appareils</li>
+            <li>Améliorer nos services et notre site web</li>
+            <li>Respecter nos obligations légales</li>
+          </ul>
+        </div>
 
-        <section>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>4. Droits d'accès et de rectification</h2>
-          <p>Conformément à la loi « informatique et libertés » et au RGPD, vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier ou supprimer en nous contactant à : <strong>labrigademobile31@gmail.com</strong>.</p>
-        </section>
+        <div className={styles.section}>
+          <h2>4. Protection et conservation</h2>
+          <p>
+            Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données contre tout accès non autorisé. Vos données ne sont conservées que le temps nécessaire aux finalités pour lesquelles elles ont été collectées, conformément à la législation en vigueur.
+          </p>
+        </div>
 
-        <section>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>5. Cookies et traceurs</h2>
-          <p>Ce site peut être amené à utiliser des cookies (notamment pour des outils d'analyse d'audience ou le Pixel Facebook) afin d'améliorer votre expérience utilisateur et de nous permettre d'optimiser nos campagnes publicitaires. Vous pouvez à tout moment configurer votre navigateur pour refuser ces cookies.</p>
-        </section>
+        <div className={styles.section}>
+          <h2>5. Partage des données</h2>
+          <p>
+            ReparPhone ne vend, ne loue, ni ne partage vos données personnelles à des tiers à des fins commerciales. Elles peuvent être communiquées uniquement à des prestataires techniques agissant pour notre compte, tenus par une obligation de confidentialité.
+          </p>
+        </div>
+
+        <div className={styles.section}>
+          <h2>6. Cookies</h2>
+          <p>
+            Notre site utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez choisir d'accepter ou de refuser les cookies via notre bannière de consentement ou les paramètres de votre navigateur.
+          </p>
+        </div>
+
+        <div className={styles.section}>
+          <h2>7. Vos droits</h2>
+          <p>
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition au traitement de vos données. Pour exercer ces droits, veuillez nous contacter à l'adresse : <a href="mailto:labrigademobile31@gmail.com">labrigademobile31@gmail.com</a>.
+          </p>
+        </div>
+
+        <div className={styles.backButtonContainer}>
+          <Link href="/" className="btn-primary">Retour à l'accueil</Link>
+        </div>
       </div>
     </div>
   );
