@@ -29,6 +29,7 @@ const BrandIcon = ({ brand, size = 20 }) => {
 
 const brandsAndModels = [
   { brand: 'Apple', models: [
+    'iPhone Duo', 'iPhone 18 Pro Max', 'iPhone 18 Pro', 'iPhone 18',
     'iPhone 15 Pro Max', 'iPhone 15 Pro', 'iPhone 15 Plus', 'iPhone 15', 
     'iPhone 14 Pro Max', 'iPhone 14 Pro', 'iPhone 14 Plus', 'iPhone 14', 
     'iPhone 13 Pro Max', 'iPhone 13 Pro', 'iPhone 13 mini', 'iPhone 13', 

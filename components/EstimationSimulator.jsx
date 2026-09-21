@@ -14,7 +14,7 @@ const BRANDS = [
 ];
 
 const MODELS = {
-  apple: ['iPhone 15 Pro Max', 'iPhone 15 Pro', 'iPhone 15', 'iPhone 14 Pro Max', 'iPhone 14 Pro', 'iPhone 14', 'iPhone 13 / 12 / 11'],
+  apple: ['iPhone Duo', 'iPhone 18 Pro Max', 'iPhone 18 Pro', 'iPhone 18', 'iPhone 15 Pro Max', 'iPhone 15 Pro', 'iPhone 15', 'iPhone 14 Pro Max', 'iPhone 14 Pro', 'iPhone 14', 'iPhone 13 / 12 / 11'],
   samsung: ['Galaxy S24 Ultra', 'Galaxy S24 / S24+', 'Galaxy S23 Ultra', 'Galaxy S23 / S23+', 'Galaxy S22 Series', 'Galaxy A Series', 'Galaxy Z Fold / Flip'],
   xiaomi: ['Xiaomi 14 / 13 Series', 'Redmi Note 13 / 12', 'Poco Series', 'Autre modèle Xiaomi'],
   other: ['Google Pixel', 'Oppo', 'OnePlus', 'Autre']

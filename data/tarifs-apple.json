@@ -29,5 +29,9 @@
   { "modele": "IP16", "ecranLcd": 130, "ecranOled": 160, "ecranOriginal": 350, "batterie": 70, "vitreArriere": 90, "chassis": 130, "cameraArriere": 85, "portChargement": 55 },
   { "modele": "IP16 Plus", "ecranLcd": 150, "ecranOled": 170, "ecranOriginal": 380, "batterie": 70, "vitreArriere": 100, "chassis": 140, "cameraArriere": 70, "portChargement": 50 },
   { "modele": "IP16 Pro", "ecranLcd": 170, "ecranOled": 200, "ecranOriginal": 390, "batterie": 80, "vitreArriere": 100, "chassis": 140, "cameraArriere": 85, "portChargement": 55 },
-  { "modele": "IP16 ProMax", "ecranLcd": 200, "ecranOled": 230, "ecranOriginal": 450, "batterie": 90, "vitreArriere": 120, "chassis": 160, "cameraArriere": 90, "portChargement": 65 }
+  { "modele": "IP16 ProMax", "ecranLcd": 200, "ecranOled": 230, "ecranOriginal": 450, "batterie": 90, "vitreArriere": 120, "chassis": 160, "cameraArriere": 90, "portChargement": 65 },
+  { "modele": "IP Duo", "ecranLcd": "Sur devis", "ecranOled": "Sur devis", "ecranOriginal": "Sur devis", "batterie": "Sur devis", "vitreArriere": "Sur devis", "chassis": "Sur devis", "cameraArriere": "Sur devis", "portChargement": "Sur devis" },
+  { "modele": "IP18", "ecranLcd": "Sur devis", "ecranOled": "Sur devis", "ecranOriginal": "Sur devis", "batterie": "Sur devis", "vitreArriere": "Sur devis", "chassis": "Sur devis", "cameraArriere": "Sur devis", "portChargement": "Sur devis" },
+  { "modele": "IP18 Pro", "ecranLcd": "Sur devis", "ecranOled": "Sur devis", "ecranOriginal": "Sur devis", "batterie": "Sur devis", "vitreArriere": "Sur devis", "chassis": "Sur devis", "cameraArriere": "Sur devis", "portChargement": "Sur devis" },
+  { "modele": "IP18 ProMax", "ecranLcd": "Sur devis", "ecranOled": "Sur devis", "ecranOriginal": "Sur devis", "batterie": "Sur devis", "vitreArriere": "Sur devis", "chassis": "Sur devis", "cameraArriere": "Sur devis", "portChargement": "Sur devis" }
 ]
