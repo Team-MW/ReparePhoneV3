@@ -78,6 +78,8 @@
 }
 
 .card {
+  background: white;
+  border: 2px solid var(--surface);
   border-radius: 16px;
   padding: 1.5rem 1rem;
   display: flex;
@@ -91,9 +93,9 @@
 }
 
 .card:hover {
-  border-color: rgba(90, 216, 255, 0.45);
+  border-color: var(--primary);
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(7, 19, 56, 0.35);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
 }
 
 .cardEmoji {
@@ -102,7 +104,7 @@
 
 .cardTitle {
   font-weight: 700;
-  color: #fff;
+  color: var(--secondary);
   font-size: 1.05rem;
 }
 
@@ -113,12 +115,12 @@
 
 .cardDesc {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
 }
 
 .iconWrapper {
-  color: #5ad8ff;
-  background: rgba(90, 216, 255, 0.12);
+  color: var(--primary);
+  background: var(--surface);
   padding: 1rem;
   border-radius: 50%;
 }
@@ -137,22 +139,22 @@
 .listModels::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
 .modelBtn {
-  background: linear-gradient(145deg, #071338 0%, #0a1a4a 45%, #06102e 100%);
-  border: 1px solid rgba(90, 216, 255, 0.15);
+  background: white;
+  border: 1px solid var(--border);
   padding: 1rem 1.5rem;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--secondary);
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .modelBtn:hover {
-  border-color: rgba(90, 216, 255, 0.45);
-  background: linear-gradient(145deg, #0a1a4a 0%, #0d2460 45%, #071338 100%);
-  color: #9aecff;
+  border-color: var(--primary);
+  background: var(--surface);
+  color: var(--primary);
   transform: translateX(5px);
 }
 

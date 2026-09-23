@@ -98,6 +98,9 @@ const brandsAndModels = [
   { brand: 'Motorola', models: ['Edge 40 Pro', 'Edge 40', 'Edge 40 Neo', 'Razr 40 Ultra', 'Razr 40', 'Moto G84', 'Moto G54'] },
   { brand: 'Sony', models: ['Xperia 1 V', 'Xperia 5 V', 'Xperia 10 V', 'Xperia 1 IV', 'Xperia 5 IV', 'Xperia 10 IV'] },
   { brand: 'Consoles', models: [
+    'PS5', 'PS5 Slim', 'PS4', 'PS4 Slim', 'PS4 Pro',
+    'Xbox Series X', 'Xbox Series S', 'Xbox One', 'Xbox One S', 'Xbox One X',
+    'Nintendo Switch', 'Nintendo Switch OLED', 'Nintendo Switch Lite',
     'Manette PS5 DualSense', 'Manette PS5 DualSense Edge',
     'Manette Xbox Series', 'Manette Xbox One',
     'Manette Nintendo Switch Pro', 'Joy-Con Nintendo Switch'
@@ -114,23 +117,34 @@ const repairTypes = [
   { type: 'Connecteur de charge', time: '30 min' }
 ];
 
-const consoleRepairTypes = [
-  { type: 'Joystick Drift', time: '45 min' },
-  { type: 'Modules stick', time: '45 min' },
-  { type: 'Boutons', time: '40 min' },
-  { type: 'Batterie manette', time: '35 min' },
-  { type: 'Connecteur USB-C', time: '40 min' },
+const controllerRepairTypes = [
+  { type: 'Joystick Drift', time: '1 j' },
+  { type: 'Modules stick', time: '1 j' },
+  { type: 'Boutons', time: '1 j' },
+  { type: 'Batterie manette', time: '1 j' },
+  { type: 'Connecteur USB-C', time: '1 j' },
   { type: 'Diagnostic', time: '15 min' }
 ];
+
+const consoleBodyRepairTypes = [
+  { type: 'Port HDMI', time: '1 j' },
+  { type: 'Connecteur HDMI', time: '1 j' },
+  { type: 'Alimentation', time: '1 j' },
+  { type: 'Lecteur disque', time: '1 j' },
+  { type: 'Diagnostic', time: '15 min' }
+];
+
+const isControllerModel = (model) =>
+  /manette|joy-con|dualsense|joycon/i.test(model);
 
 const devicesDatabase = [];
 brandsAndModels.forEach(({ brand, models }) => {
   models.forEach(model => {
-    devicesDatabase.push({
-      brand,
-      model,
-      repairs: brand === 'Consoles' ? consoleRepairTypes : repairTypes
-    });
+    let repairs = repairTypes;
+    if (brand === 'Consoles') {
+      repairs = isControllerModel(model) ? controllerRepairTypes : consoleBodyRepairTypes;
+    }
+    devicesDatabase.push({ brand, model, repairs });
   });
 });
 
@@ -189,7 +203,7 @@ export default function Reparations() {
               <Search className={styles.searchIcon} size={28} />
               <input 
                 type="text" 
-                placeholder="Rechercher (ex: Joystick Drift PS5, Écran iPhone 13...)" 
+                placeholder="Rechercher (ex: HDMI PS5, Joystick Drift, Écran iPhone 13...)" 
                 className={styles.searchInput}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -199,8 +213,7 @@ export default function Reparations() {
            <div className={styles.resultsGrid}>
               {filteredDevices.length > 0 ? (
                 filteredDevices.map((device, idx) => (
-                  <div key={idx} className={`${styles.repairCard} rp-blue-card`}>
-                     <BlueCardStreaks />
+                  <div key={idx} className={styles.repairCard}>
                      <div className={styles.repairHeader}>
                         <span className={styles.brandTag}>
                           <BrandIcon brand={device.brand} size={16} />
@@ -258,7 +271,7 @@ export default function Reparations() {
                 <ul className={styles.driftSeoPoints}>
                   <li><CheckCircle2 size={20} /> Diagnostic gratuit en boutique</li>
                   <li><Wrench size={20} /> Remplacement des modules analogiques</li>
-                  <li><Zap size={20} /> Réparation express &amp; test en jeu</li>
+                  <li><Zap size={20} /> Délai de réparation : 1 jour</li>
                 </ul>
 
                 <div className={styles.driftSeoActions}>
@@ -313,7 +326,68 @@ export default function Reparations() {
                 <p>
                   Le tarif dépend de l&apos;état de la manette et des pièces (un ou deux sticks, DualSense classique
                   ou Edge). Nous réalisons un <strong>diagnostic gratuit</strong> en boutique et vous confirmons le
-                  prix avant intervention. La réparation est généralement faite en express le jour même.
+                  prix avant intervention. La réparation joystick drift est réalisée sous <strong>1 jour</strong>.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Réparation HDMI Consoles */}
+      <section id="hdmi-console" className={styles.driftSeoSection}>
+        <div className="container">
+          <div className={`${styles.driftSeoPanel} rp-blue-card`}>
+            <BlueCardStreaks />
+            <div className={styles.driftSeoText} style={{ maxWidth: '900px', marginBottom: '2rem' }}>
+              <span className={styles.driftSeoBadge}>
+                <Gamepad2 size={18} /> PlayStation · Xbox · Switch
+              </span>
+              <h2 className={styles.driftSeoTitle}>
+                Réparation <span>Port HDMI</span> console PS5, Xbox &amp; plus
+              </h2>
+              <p className={styles.driftSeoLead}>
+                Plus d&apos;image sur la télé ? Écran noir, message «&nbsp;aucun signal&nbsp;» ou HDMI qui
+                se débranche tout seul ? Chez ReparPhone Toulouse, nous réparons le
+                <strong> port HDMI</strong> de votre <strong>PS5</strong>, <strong>PS4</strong>,
+                <strong> Xbox Series X / S</strong>, <strong>Xbox One</strong> et
+                <strong> Nintendo Switch</strong>.
+              </p>
+
+              <ul className={styles.driftSeoPoints}>
+                <li><CheckCircle2 size={20} /> Diagnostic gratuit en boutique</li>
+                <li><Wrench size={20} /> Remplacement du connecteur HDMI</li>
+                <li><Zap size={20} /> Délai de réparation : 1 jour</li>
+              </ul>
+
+              <div className={styles.driftSeoActions}>
+                <a href="/contact" className={styles.driftSeoCta}>Réparer mon HDMI console</a>
+              </div>
+            </div>
+
+            <div className={styles.driftSeoArticles}>
+              <article>
+                <h3>Réparation HDMI PlayStation 5 et PS4</h3>
+                <p>
+                  Sur <strong>PS5</strong>, <strong>PS5 Slim</strong>, <strong>PS4</strong>,
+                  Slim et Pro, le port HDMI est fragile. Nous le remplaçons pour retrouver
+                  une image stable sur votre TV ou moniteur.
+                </p>
+              </article>
+              <article>
+                <h3>Réparation HDMI Xbox Series X, S et Xbox One</h3>
+                <p>
+                  Console <strong>Xbox Series X</strong>, <strong>Series S</strong> ou
+                  <strong> Xbox One</strong> sans signal HDMI ? Diagnostic gratuit puis
+                  remplacement du connecteur, avec test avant restitution.
+                </p>
+              </article>
+              <article>
+                <h3>Nintendo Switch et dock HDMI</h3>
+                <p>
+                  Problème d&apos;image en mode TV sur <strong>Nintendo Switch</strong> /
+                  OLED ? Nous intervenons sur la console et le dock (selon diagnostic)
+                  pour rétablir la sortie HDMI.
                 </p>
               </article>
             </div>
@@ -349,7 +423,11 @@ export default function Reparations() {
                 </div>
                 <div className={styles.seoBlock}>
                    <h3>Réparation joystick drift manette PS5 DualSense</h3>
-                   <p>En plus des smartphones, ReparPhone propose la <strong>réparation de manettes PS5</strong> victimes de <strong>joystick drift</strong> (stick qui dérive tout seul). Remplacement des modules analogiques DualSense et DualSense Edge, diagnostic gratuit, test en jeu (FIFA 27, GTA 6, Call of Duty, Fortnite…). Intervention express à Toulouse pour retrouver une précision de contrôle optimale.</p>
+                   <p>En plus des smartphones, ReparPhone propose la <strong>réparation de manettes PS5</strong> victimes de <strong>joystick drift</strong> (stick qui dérive tout seul). Remplacement des modules analogiques DualSense et DualSense Edge, diagnostic gratuit, test en jeu (FIFA 27, GTA 6, Call of Duty, Fortnite…). Délai de réparation : <strong>1 jour</strong> à Toulouse.</p>
+                </div>
+                <div className={styles.seoBlock}>
+                   <h3>Réparation port HDMI PS5, Xbox Series, Xbox One &amp; plus</h3>
+                   <p>Plus d&apos;image sur la TV ? Le <strong>port HDMI</strong> de votre console est souvent en cause (prise abîmée, contacts oxydés, connecteur cassé). Nous réparons le <strong>HDMI PS5</strong>, <strong>PS5 Slim</strong>, <strong>PS4</strong>, <strong>Xbox Series X / S</strong>, <strong>Xbox One</strong> et <strong>Nintendo Switch</strong> (dock inclus selon diagnostic). Remplacement du connecteur HDMI, délai <strong>1 jour</strong>, devis gratuit en boutique à Toulouse.</p>
                 </div>
              </div>
           </div>
@@ -364,7 +442,8 @@ export default function Reparations() {
           { question: "La réparation de mon téléphone est-elle garantie ?", answer: "Oui, toutes nos réparations (changement d'écran, batterie, connecteur de charge) sont garanties 1 an pièces et main d'œuvre." },
           { question: "Comment savoir si ma manette PS5 a un joystick drift ?", answer: "Si le stick bouge tout seul à l'écran (personnage qui marche, caméra qui dérive) sans que vous touchiez la manette, c'est typiquement un stick drift. Apportez-la en boutique : diagnostic gratuit." },
           { question: "Réparez-vous les manettes DualSense et DualSense Edge ?", answer: "Oui. Nous remplaçons les modules joystick défectueux sur DualSense et DualSense Edge, puis nous testons la manette en jeu avant de vous la rendre." },
-          { question: "Combien de temps prend une réparation joystick drift ?", answer: "En général moins d'une heure une fois la pièce disponible. La plupart des interventions se font en express le jour même à Toulouse." },
+          { question: "Combien de temps prend une réparation joystick drift ?", answer: "Le délai de réparation pour un joystick drift (manette PS5 DualSense) est de 1 jour. Diagnostic gratuit en boutique avant intervention." },
+          { question: "Réparez-vous le port HDMI des consoles PlayStation et Xbox ?", answer: "Oui. Nous remplaçons le connecteur HDMI des PS5, PS4, Xbox Series X/S, Xbox One et Nintendo Switch. Si votre console n'affiche plus d'image sur la TV, apportez-la pour un diagnostic gratuit. Délai : 1 jour." },
           { question: "Dois-je prendre rendez-vous pour réparer mon appareil ?", answer: "Nous vous conseillons de prendre rendez-vous via notre formulaire ou par téléphone pour garantir la disponibilité de la pièce de rechange et vous assurer une réparation ultra rapide." },
           { question: "Est-ce que je vais perdre mes photos et données ?", answer: "Dans 99% des réparations matérielles classiques sur téléphone, vos données sont conservées. Toutefois, nous vous recommandons toujours d'effectuer une sauvegarde complète avant l'intervention par précaution." }
         ]}

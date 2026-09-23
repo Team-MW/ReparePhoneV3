@@ -127,14 +127,17 @@
 }
 
 .repairCard {
+  background: #fff;
   border-radius: 30px;
   padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  border: 1px solid var(--border);
   transition: transform var(--transition-fast);
 }
 
 .repairCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(90, 216, 255, 0.4);
+  border-color: var(--primary);
 }
 
 .repairHeader {
@@ -145,8 +148,8 @@
 }
 
 .brandTag {
-  background: rgba(90, 216, 255, 0.12);
-  color: #5ad8ff;
+  background: #eff6ff;
+  color: var(--primary);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -159,13 +162,13 @@
 }
 
 .cardIcon {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
 }
 
 .repairModel {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -181,7 +184,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0;
-  border-bottom: 1px dashed rgba(90, 216, 255, 0.2);
+  border-bottom: 1px dashed var(--border);
 }
 
 .repairListItem:last-child {
@@ -190,13 +193,13 @@
 
 .repairTypeItem {
   font-weight: 600;
-  color: #fff;
+  color: var(--secondary);
 }
 
 .repairTimeItem {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(90, 216, 255, 0.12);
+  color: var(--text-muted);
+  background: #f8fafc;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
   font-weight: 500;
@@ -214,13 +217,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #5ad8ff;
+  color: var(--primary);
   font-weight: 700;
   transition: color var(--transition-fast);
 }
 
 .quoteLink:hover {
-  color: #9aecff;
+  color: var(--primary-hover);
 }
 
 .noResults {

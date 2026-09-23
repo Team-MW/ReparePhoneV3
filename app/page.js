@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Wrench, Battery, Droplet, MonitorSmartphone, ShieldCheck, Zap, ThumbsUp, EyeOff } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 import FAQ from '@/components/FAQ';
-import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from "./page.module.css";
 
 const GoogleStar = ({ size = 20 }) => (
@@ -19,7 +18,7 @@ export default function Home() {
   const services = [
     { icon: <MonitorSmartphone size={32} />, title: "Écran Cassé", desc: "Remplacement d'écran rapide avec des pièces de haute qualité." },
     { icon: <Battery size={32} />, title: "Batterie", desc: "Redonnez une seconde jeunesse à votre appareil." },
-    { icon: <Wrench size={32} />, title: "Autres Réparations", desc: "Connecteur, caméra, boutons... Nous réparons tout." },
+    { icon: <Wrench size={32} />, title: "Autres Réparations", desc: "HDMI console, manette, connecteur, caméra... On répare tout." },
   ];
 
   const advantages = [
@@ -114,8 +113,7 @@ export default function Home() {
         <div className={`container ${styles.servicesContainer}`}>
           <div className={styles.servicesGrid}>
             {services.map((service, idx) => (
-              <div key={idx} className={`${styles.serviceCard} rp-blue-card`}>
-                <BlueCardStreaks />
+              <div key={idx} className={styles.serviceCard}>
                 <div className={styles.serviceIcon}>{service.icon}</div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDesc}>{service.desc}</p>
@@ -135,8 +133,7 @@ export default function Home() {
         <div className={`container ${styles.advantagesContainer}`}>
           <div className={styles.advantagesGrid}>
             {advantages.map((adv, idx) => (
-              <div key={idx} className={`${styles.advCard} rp-blue-card`}>
-                <BlueCardStreaks />
+              <div key={idx} className={styles.advCard}>
                 <div className={styles.advIcon}>{adv.icon}</div>
                 <h3 className={styles.advTitle}>{adv.title}</h3>
                 <p className={styles.advDesc}>{adv.desc}</p>
@@ -280,7 +277,7 @@ export default function Home() {
                 <ul className={styles.driftFeatures}>
                   <li>Diagnostic gratuit en boutique</li>
                   <li>Remplacement des modules joystick</li>
-                  <li>Réparation express &amp; test en jeu</li>
+                  <li>Délai de réparation : 1 jour</li>
                 </ul>
 
                 <a href="/contact" className={styles.driftCta}>Réparer ma manette</a>
@@ -336,8 +333,7 @@ export default function Home() {
           <div className={styles.marqueeTrack}>
             {/* Ligne 1 : Défilement vers la gauche */}
             {[...reviewsRow1, ...reviewsRow1].map((review, idx) => (
-              <div key={idx} className={`${styles.reviewCard} rp-blue-card`}>
-                <BlueCardStreaks />
+              <div key={idx} className={styles.reviewCard}>
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {review.name.charAt(0)}
@@ -365,8 +361,7 @@ export default function Home() {
           <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
             {/* Ligne 2 : Défilement vers la droite */}
             {[...reviewsRow2, ...reviewsRow2].map((review, idx) => (
-              <div key={idx} className={`${styles.reviewCard} rp-blue-card`}>
-                <BlueCardStreaks />
+              <div key={idx} className={styles.reviewCard}>
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {review.name.charAt(0)}

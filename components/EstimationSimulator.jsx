@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Smartphone, Battery, MonitorX, PowerOff, CheckCircle2, ArrowRight, ChevronLeft, Search } from 'lucide-react';
 import { SiXiaomi } from 'react-icons/si';
-import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from './EstimationSimulator.module.css';
 
 const BRANDS = [
@@ -100,8 +99,7 @@ export default function EstimationSimulator() {
         {step === 1 && (
           <div className={styles.gridCards}>
             {BRANDS.map(brand => (
-              <div key={brand.id} className={`${styles.card} rp-blue-card`} onClick={() => handleBrandSelect(brand.id)}>
-                <BlueCardStreaks />
+              <div key={brand.id} className={styles.card} onClick={() => handleBrandSelect(brand.id)}>
                 <span className={styles.cardEmoji}>{brand.logo}</span>
                 <span className={styles.cardTitle}>{brand.name}</span>
               </div>
@@ -128,8 +126,7 @@ export default function EstimationSimulator() {
           ) : (
             <div className={styles.gridCards}>
               {CONDITIONS.map(cond => (
-                <div key={cond.id} className={`${styles.card} ${styles.conditionCard} rp-blue-card`} onClick={() => handleConditionSelect(cond.id)}>
-                  <BlueCardStreaks />
+                <div key={cond.id} className={`${styles.card} ${styles.conditionCard}`} onClick={() => handleConditionSelect(cond.id)}>
                   <div className={styles.iconWrapper}>{cond.icon}</div>
                   <span className={styles.cardTitle}>{cond.label}</span>
                   <span className={styles.cardDesc}>{cond.desc}</span>
