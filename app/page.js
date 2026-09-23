@@ -114,6 +114,11 @@ export default function Home() {
           <div className={styles.servicesGrid}>
             {services.map((service, idx) => (
               <div key={idx} className={styles.serviceCard}>
+                <div className={styles.serviceStreaks} aria-hidden="true">
+                  <span className={styles.serviceStreak}></span>
+                  <span className={styles.serviceStreak}></span>
+                  <span className={styles.serviceStreak}></span>
+                </div>
                 <div className={styles.serviceIcon}>{service.icon}</div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDesc}>{service.desc}</p>

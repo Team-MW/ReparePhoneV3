@@ -203,6 +203,9 @@
 }
 
 .serviceCard {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background: linear-gradient(145deg, #071338 0%, #0a1a4a 45%, #06102e 100%);
   padding: 2.5rem 2rem;
   border-radius: 30px;
@@ -216,7 +219,39 @@
   box-shadow: 0 18px 40px rgba(7, 19, 56, 0.45);
 }
 
+.serviceStreaks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.serviceStreak {
+  position: absolute;
+  width: 2px;
+  height: 160%;
+  top: -30%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(90, 220, 255, 0.12),
+    rgba(90, 220, 255, 0.75),
+    rgba(90, 220, 255, 0.12),
+    transparent
+  );
+  box-shadow: 0 0 16px 3px rgba(0, 200, 255, 0.45);
+  transform: rotate(-38deg);
+  animation: driftPulse 4s ease-in-out infinite alternate;
+}
+
+.serviceStreak:nth-child(1) { left: 55%; animation-delay: 0s; }
+.serviceStreak:nth-child(2) { left: 68%; height: 180%; opacity: 0.65; animation-delay: 0.7s; }
+.serviceStreak:nth-child(3) { left: 82%; opacity: 0.4; animation-delay: 1.4s; }
+
 .serviceIcon {
+  position: relative;
+  z-index: 1;
   color: #5ad8ff;
   margin-bottom: 1.5rem;
   background: rgba(90, 216, 255, 0.12);
@@ -229,6 +264,8 @@
 }
 
 .serviceTitle {
+  position: relative;
+  z-index: 1;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -236,6 +273,8 @@
 }
 
 .serviceDesc {
+  position: relative;
+  z-index: 1;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.95rem;
 }
