@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Loader2 } from 'lucide-react';
+import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from './page.module.css';
 
 export default function Contact() {
@@ -66,7 +67,8 @@ export default function Contact() {
           
           {/* Informations de contact & Adresse */}
           <div className={styles.infoSection}>
-            <div className={styles.infoCard}>
+            <div className={`${styles.infoCard} rp-blue-card`}>
+              <BlueCardStreaks />
               <h2 className={styles.cardTitle}>Notre Boutique</h2>
               
               <div className={styles.infoItem}>
@@ -112,7 +114,8 @@ export default function Contact() {
             </div>
 
             {/* Réseaux Sociaux */}
-            <div className={styles.socialCard}>
+            <div className={`${styles.socialCard} rp-blue-card`}>
+              <BlueCardStreaks />
               <h2 className={styles.cardTitle}>Suivez-nous</h2>
               <div className={styles.socialLinks}>
                 <a href="#" className={styles.socialLink}>

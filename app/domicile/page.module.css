@@ -340,10 +340,7 @@
 }
 
 .bentoCard {
-  background: #fff;
   border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.02);
   padding: 3rem;
   position: relative;
   overflow: hidden;
@@ -354,8 +351,8 @@
 
 .bentoCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.08);
-  border-color: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 30px 60px rgba(7, 19, 56, 0.35);
+  border-color: rgba(90, 216, 255, 0.35);
 }
 
 .bentoLarge {
@@ -376,7 +373,7 @@
 .bentoVisual {
   width: 80px;
   height: 80px;
-  background: #eff6ff;
+  background: rgba(90, 216, 255, 0.12);
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -388,7 +385,7 @@
 .bentoVisualSmall {
   width: 64px;
   height: 64px;
-  background: #eff6ff;
+  background: rgba(90, 216, 255, 0.12);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -411,13 +408,13 @@
 }
 
 .iconBlue {
-  color: #2563eb;
+  color: #5ad8ff;
 }
 
 .stepNumberInline {
   display: inline-block;
-  background: #f1f5f9;
-  color: #64748b;
+  background: rgba(90, 216, 255, 0.12);
+  color: #5ad8ff;
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -430,12 +427,12 @@
 .bentoContent h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .bentoContent p {
-  color: #475569;
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.7;
   font-size: 1.1rem;
 }

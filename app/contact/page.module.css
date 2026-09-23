@@ -84,17 +84,14 @@
 }
 
 .infoCard, .socialCard {
-  background: #fff;
   border-radius: 30px;
   padding: 3rem 2.5rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-  border: 1px solid var(--border);
 }
 
 .cardTitle {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--secondary);
+  color: #fff;
   margin-bottom: 2rem;
 }
 
@@ -110,8 +107,8 @@
 }
 
 .icon {
-  color: var(--primary);
-  background: #eff6ff;
+  color: #5ad8ff;
+  background: rgba(90, 216, 255, 0.12);
   padding: 0.8rem;
   border-radius: 50%;
   width: 50px;
@@ -122,12 +119,12 @@
 .infoItem strong {
   display: block;
   font-size: 1.1rem;
-  color: var(--secondary);
+  color: #fff;
   margin-bottom: 0.3rem;
 }
 
 .infoItem p {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
 }
 
@@ -137,8 +134,8 @@
 }
 
 .socialLink {
-  color: var(--secondary);
-  background: #f8fafc;
+  color: #5ad8ff;
+  background: rgba(90, 216, 255, 0.12);
   padding: 1rem;
   border-radius: 50%;
   display: flex;
@@ -148,10 +145,10 @@
 }
 
 .socialLink:hover {
-  background: var(--primary);
-  color: #fff;
+  background: #5ad8ff;
+  color: #06102e;
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 20px rgba(90, 216, 255, 0.25);
 }
 
 /* Form Section */

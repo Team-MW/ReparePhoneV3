@@ -193,3 +193,55 @@ ul {
 .bus-70 {
   background-color: #EA488C;
 }
+
+/* Cartes bleues gaming (traits cyan) */
+.rp-blue-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(145deg, #071338 0%, #0a1a4a 45%, #06102e 100%);
+  border: 1px solid rgba(90, 216, 255, 0.15);
+  box-shadow: 0 12px 32px rgba(7, 19, 56, 0.35);
+  color: #fff;
+}
+
+.rp-streaks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.rp-streaks span {
+  position: absolute;
+  width: 2px;
+  height: 160%;
+  top: -30%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(90, 220, 255, 0.12),
+    rgba(90, 220, 255, 0.75),
+    rgba(90, 220, 255, 0.12),
+    transparent
+  );
+  box-shadow: 0 0 16px 3px rgba(0, 200, 255, 0.45);
+  transform: rotate(-38deg);
+  animation: rpStreakPulse 4s ease-in-out infinite alternate;
+}
+
+.rp-streaks span:nth-child(1) { left: 55%; animation-delay: 0s; }
+.rp-streaks span:nth-child(2) { left: 68%; height: 180%; opacity: 0.65; animation-delay: 0.7s; }
+.rp-streaks span:nth-child(3) { left: 82%; opacity: 0.4; animation-delay: 1.4s; }
+
+@keyframes rpStreakPulse {
+  from { opacity: 0.45; filter: brightness(0.9); }
+  to { opacity: 1; filter: brightness(1.25); }
+}
+
+.rp-blue-card > *:not(.rp-streaks) {
+  position: relative;
+  z-index: 1;
+}
+

@@ -154,15 +154,12 @@
 }
 
 .featureCard {
-  background: #fff;
   padding: 3rem;
   border-radius: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  border: 1px solid var(--border);
 }
 
 .icon {
-  color: #10b981;
+  color: #5ad8ff;
   margin-bottom: 1.5rem;
 }
 
@@ -170,11 +167,11 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: var(--secondary);
+  color: #fff;
 }
 
 .featureCard p {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.6;
 }
 

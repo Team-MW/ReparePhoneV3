@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Search, PenTool, ArrowRight } from 'lucide-react';
+import { Search, PenTool, ArrowRight, Gamepad2, Wrench, Zap, CheckCircle2 } from 'lucide-react';
 import { FaApple, FaGoogle, FaTabletAlt, FaLaptop } from 'react-icons/fa';
 import { SiSamsung, SiHuawei, SiXiaomi, SiOppo, SiHonor, SiOneplus, SiAsus, SiMotorola, SiSony } from 'react-icons/si';
 import FAQ from '@/components/FAQ';
+import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from './page.module.css';
 
 const BrandIcon = ({ brand, size = 20 }) => {
@@ -15,6 +16,7 @@ const BrandIcon = ({ brand, size = 20 }) => {
     case 'Huawei': return <Image src="/brands/huawei.png" alt="Huawei" width={size} height={size} style={{ objectFit: 'contain' }} />;
     case 'Tablettes': return <FaTabletAlt size={size} />;
     case 'Ordinateurs': return <FaLaptop size={size} />;
+    case 'Consoles': return <Gamepad2 size={size} />;
     case 'Xiaomi': return <SiXiaomi size={size} />;
     case 'Google': return <FaGoogle size={size} />;
     case 'Oppo': return <SiOppo size={size} />;
@@ -94,7 +96,12 @@ const brandsAndModels = [
   { brand: 'OnePlus', models: ['12', '12R', '11 5G', '10T', '10 Pro', '9 Pro', '9', 'Nord 3', 'Nord 2T', 'Nord CE 3 Lite', 'Nord CE 2'] },
   { brand: 'Asus', models: ['ROG Phone 8 Pro', 'ROG Phone 8', 'ROG Phone 7 Ultimate', 'ROG Phone 7', 'ROG Phone 6', 'Zenfone 10', 'Zenfone 9'] },
   { brand: 'Motorola', models: ['Edge 40 Pro', 'Edge 40', 'Edge 40 Neo', 'Razr 40 Ultra', 'Razr 40', 'Moto G84', 'Moto G54'] },
-  { brand: 'Sony', models: ['Xperia 1 V', 'Xperia 5 V', 'Xperia 10 V', 'Xperia 1 IV', 'Xperia 5 IV', 'Xperia 10 IV'] }
+  { brand: 'Sony', models: ['Xperia 1 V', 'Xperia 5 V', 'Xperia 10 V', 'Xperia 1 IV', 'Xperia 5 IV', 'Xperia 10 IV'] },
+  { brand: 'Consoles', models: [
+    'Manette PS5 DualSense', 'Manette PS5 DualSense Edge',
+    'Manette Xbox Series', 'Manette Xbox One',
+    'Manette Nintendo Switch Pro', 'Joy-Con Nintendo Switch'
+  ]}
 ];
 
 const repairTypes = [
@@ -107,13 +114,22 @@ const repairTypes = [
   { type: 'Connecteur de charge', time: '30 min' }
 ];
 
+const consoleRepairTypes = [
+  { type: 'Joystick Drift', time: '45 min' },
+  { type: 'Modules stick', time: '45 min' },
+  { type: 'Boutons', time: '40 min' },
+  { type: 'Batterie manette', time: '35 min' },
+  { type: 'Connecteur USB-C', time: '40 min' },
+  { type: 'Diagnostic', time: '15 min' }
+];
+
 const devicesDatabase = [];
 brandsAndModels.forEach(({ brand, models }) => {
   models.forEach(model => {
     devicesDatabase.push({
       brand,
       model,
-      repairs: repairTypes
+      repairs: brand === 'Consoles' ? consoleRepairTypes : repairTypes
     });
   });
 });
@@ -173,7 +189,7 @@ export default function Reparations() {
               <Search className={styles.searchIcon} size={28} />
               <input 
                 type="text" 
-                placeholder="Rechercher (ex: Écran iPhone 13, Batterie Samsung S22...)" 
+                placeholder="Rechercher (ex: Joystick Drift PS5, Écran iPhone 13...)" 
                 className={styles.searchInput}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -183,7 +199,8 @@ export default function Reparations() {
            <div className={styles.resultsGrid}>
               {filteredDevices.length > 0 ? (
                 filteredDevices.map((device, idx) => (
-                  <div key={idx} className={styles.repairCard}>
+                  <div key={idx} className={`${styles.repairCard} rp-blue-card`}>
+                     <BlueCardStreaks />
                      <div className={styles.repairHeader}>
                         <span className={styles.brandTag}>
                           <BrandIcon brand={device.brand} size={16} />
@@ -218,6 +235,92 @@ export default function Reparations() {
         </div>
       </section>
 
+      {/* SEO Joystick Drift PS5 */}
+      <section id="joystick-drift" className={styles.driftSeoSection}>
+        <div className="container">
+          <div className={`${styles.driftSeoPanel} rp-blue-card`}>
+            <BlueCardStreaks />
+            <div className={styles.driftSeoInner}>
+              <div className={styles.driftSeoText}>
+                <span className={styles.driftSeoBadge}>
+                  <Gamepad2 size={18} /> PS5 DualSense
+                </span>
+                <h2 className={styles.driftSeoTitle}>
+                  Réparation <span>Joystick Drift</span> manette PS5 à Toulouse
+                </h2>
+                <p className={styles.driftSeoLead}>
+                  Votre stick bouge tout seul dans <strong>FIFA 27</strong>, <strong>GTA 6</strong>, Call of Duty ou Fortnite ?
+                  C&apos;est le <strong>joystick drift</strong> (stick drift) : un défaut très courant sur la manette
+                  <strong> DualSense PS5</strong>. Chez ReparPhone, on remplace les modules joystick pour que vous
+                  retrouviez le contrôle en jeu.
+                </p>
+
+                <ul className={styles.driftSeoPoints}>
+                  <li><CheckCircle2 size={20} /> Diagnostic gratuit en boutique</li>
+                  <li><Wrench size={20} /> Remplacement des modules analogiques</li>
+                  <li><Zap size={20} /> Réparation express &amp; test en jeu</li>
+                </ul>
+
+                <div className={styles.driftSeoActions}>
+                  <a href="/contact" className={styles.driftSeoCta}>Réparer ma manette PS5</a>
+                  <a href="/#joystick-drift" className={styles.driftSeoLink}>Voir la démo vidéo</a>
+                </div>
+              </div>
+
+              <div className={styles.driftSeoVisual}>
+                <Image
+                  src="/ps5-dualsense.webp"
+                  alt="Réparation joystick drift manette PS5 DualSense Toulouse"
+                  width={520}
+                  height={400}
+                  className={styles.driftSeoController}
+                />
+                <video
+                  className={styles.driftSeoVideo}
+                  src="/joystick-drift.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  title="Réparation joystick drift manette PS5"
+                />
+              </div>
+            </div>
+
+            <div className={styles.driftSeoArticles}>
+              <article>
+                <h3>Qu&apos;est-ce que le joystick drift sur une manette PS5 ?</h3>
+                <p>
+                  Le <strong>stick drift</strong> apparaît quand le joystick enregistre un mouvement alors que vous
+                  ne touchez pas la manette. En jeu, le personnage marche tout seul, la caméra tourne, ou le viseur
+                  dérive. Ce problème touche massivement les <strong>manettes DualSense</strong> et DualSense Edge
+                  après une usure des potentiomètres internes. La solution durable : remplacer les <strong>modules
+                  joystick</strong>, pas seulement nettoyer en surface.
+                </p>
+              </article>
+              <article>
+                <h3>Réparation manette PS5 pour FIFA, GTA, COD et plus</h3>
+                <p>
+                  Que vous jouiez à <strong>FIFA 27</strong>, <strong>EA Sports FC</strong>, <strong>GTA 6</strong>,
+                  Call of Duty, Fortnite, Rocket League, Elden Ring ou Gran Turismo, un stick qui dérive ruine
+                  l&apos;expérience. Nos techniciens à <strong>Toulouse</strong> (Route de Blagnac) réparent votre
+                  manette rapidement, avec test en conditions réelles avant restitution. Devis transparent, sans
+                  mauvaise surprise.
+                </p>
+              </article>
+              <article>
+                <h3>Combien coûte une réparation joystick drift ?</h3>
+                <p>
+                  Le tarif dépend de l&apos;état de la manette et des pièces (un ou deux sticks, DualSense classique
+                  ou Edge). Nous réalisons un <strong>diagnostic gratuit</strong> en boutique et vous confirmons le
+                  prix avant intervention. La réparation est généralement faite en express le jour même.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Massive SEO Content */}
       <section className={styles.seoSection}>
         <div className="container">
@@ -244,19 +347,26 @@ export default function Reparations() {
                    <h3>Types de réparations fréquentes</h3>
                    <p>Le <strong>remplacement d'écran</strong> est l'intervention numéro 1, suivi de près par le <strong>changement de batterie</strong> (en particulier lorsque celle-ci se décharge en quelques heures ou gonfle). Le <strong>connecteur de charge</strong>, souvent encrassé ou abîmé par un mauvais câble, est la 3ème cause de visite. N'oublions pas le remplacement de <strong>vitre arrière (back glass)</strong>, la réparation d'<strong>appareil photo</strong> (caméra arrière floue ou vibrante), ainsi que la <strong>désoxydation</strong> de carte mère pour les téléphones tombés à l'eau ou dans les toilettes.</p>
                 </div>
+                <div className={styles.seoBlock}>
+                   <h3>Réparation joystick drift manette PS5 DualSense</h3>
+                   <p>En plus des smartphones, ReparPhone propose la <strong>réparation de manettes PS5</strong> victimes de <strong>joystick drift</strong> (stick qui dérive tout seul). Remplacement des modules analogiques DualSense et DualSense Edge, diagnostic gratuit, test en jeu (FIFA 27, GTA 6, Call of Duty, Fortnite…). Intervention express à Toulouse pour retrouver une précision de contrôle optimale.</p>
+                </div>
              </div>
           </div>
         </div>
       </section>
 
       <FAQ 
-        title="FAQ - Réparation de Téléphones"
+        title="FAQ - Réparation de Téléphones & Manettes"
         subtitle="Vos questions fréquentes sur nos services de réparation."
         customFaqs={[
           { question: "Combien coûte la réparation d'un écran de smartphone ?", answer: "Le prix dépend du modèle exact et de la marque (Apple, Samsung, Xiaomi...). Un devis gratuit est réalisé avant chaque intervention pour garantir une totale transparence." },
           { question: "La réparation de mon téléphone est-elle garantie ?", answer: "Oui, toutes nos réparations (changement d'écran, batterie, connecteur de charge) sont garanties 1 an pièces et main d'œuvre." },
-          { question: "Dois-je prendre rendez-vous pour réparer mon appareil ?", answer: "Nous vous conseillons de prendre rendez-vous via notre formulaire ou par téléphone pour garantir la disponibilité de la pièce de rechange et vous assurer une réparation ultra rapide en 30 minutes." },
-          { question: "Est-ce que je vais perdre mes photos et données ?", answer: "Dans 99% des réparations matérielles classiques, vos données sont conservées. Toutefois, nous vous recommandons toujours d'effectuer une sauvegarde complète avant l'intervention par précaution." }
+          { question: "Comment savoir si ma manette PS5 a un joystick drift ?", answer: "Si le stick bouge tout seul à l'écran (personnage qui marche, caméra qui dérive) sans que vous touchiez la manette, c'est typiquement un stick drift. Apportez-la en boutique : diagnostic gratuit." },
+          { question: "Réparez-vous les manettes DualSense et DualSense Edge ?", answer: "Oui. Nous remplaçons les modules joystick défectueux sur DualSense et DualSense Edge, puis nous testons la manette en jeu avant de vous la rendre." },
+          { question: "Combien de temps prend une réparation joystick drift ?", answer: "En général moins d'une heure une fois la pièce disponible. La plupart des interventions se font en express le jour même à Toulouse." },
+          { question: "Dois-je prendre rendez-vous pour réparer mon appareil ?", answer: "Nous vous conseillons de prendre rendez-vous via notre formulaire ou par téléphone pour garantir la disponibilité de la pièce de rechange et vous assurer une réparation ultra rapide." },
+          { question: "Est-ce que je vais perdre mes photos et données ?", answer: "Dans 99% des réparations matérielles classiques sur téléphone, vos données sont conservées. Toutefois, nous vous recommandons toujours d'effectuer une sauvegarde complète avant l'intervention par précaution." }
         ]}
       />
 

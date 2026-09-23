@@ -5,6 +5,7 @@ export const metadata = {
 
 import { Car, Clock, MapPin, Wrench, Star, ShieldCheck, Zap } from 'lucide-react';
 import FAQ from '@/components/FAQ';
+import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from './page.module.css';
 
 export default function Domicile() {
@@ -73,7 +74,8 @@ export default function Domicile() {
           <div className={styles.bentoGrid}>
              
              {/* Big Bento Tile */}
-             <div className={`${styles.bentoCard} ${styles.bentoLarge}`}>
+             <div className={`${styles.bentoCard} ${styles.bentoLarge} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.bentoVisual}>
                   <MapPin size={48} className={styles.iconBlue} />
                   <div className={styles.radarEffect}></div>
@@ -86,7 +88,8 @@ export default function Domicile() {
              </div>
              
              {/* Medium Bento Tile */}
-             <div className={`${styles.bentoCard} ${styles.bentoMedium}`}>
+             <div className={`${styles.bentoCard} ${styles.bentoMedium} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.bentoVisualSmall}>
                   <Clock size={32} className={styles.iconBlue} />
                 </div>
@@ -98,7 +101,8 @@ export default function Domicile() {
              </div>
 
              {/* Small Bento Tile */}
-             <div className={`${styles.bentoCard} ${styles.bentoMedium}`}>
+             <div className={`${styles.bentoCard} ${styles.bentoMedium} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.bentoVisualSmall}>
                   <Wrench size={32} className={styles.iconBlue} />
                 </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Wrench, Battery, Droplet, MonitorSmartphone, ShieldCheck, Zap, ThumbsUp, EyeOff } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 import FAQ from '@/components/FAQ';
+import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from "./page.module.css";
 
 const GoogleStar = ({ size = 20 }) => (
@@ -113,12 +114,8 @@ export default function Home() {
         <div className={`container ${styles.servicesContainer}`}>
           <div className={styles.servicesGrid}>
             {services.map((service, idx) => (
-              <div key={idx} className={styles.serviceCard}>
-                <div className={styles.serviceStreaks} aria-hidden="true">
-                  <span className={styles.serviceStreak}></span>
-                  <span className={styles.serviceStreak}></span>
-                  <span className={styles.serviceStreak}></span>
-                </div>
+              <div key={idx} className={`${styles.serviceCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.serviceIcon}>{service.icon}</div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDesc}>{service.desc}</p>
@@ -138,7 +135,8 @@ export default function Home() {
         <div className={`container ${styles.advantagesContainer}`}>
           <div className={styles.advantagesGrid}>
             {advantages.map((adv, idx) => (
-              <div key={idx} className={styles.advCard}>
+              <div key={idx} className={`${styles.advCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.advIcon}>{adv.icon}</div>
                 <h3 className={styles.advTitle}>{adv.title}</h3>
                 <p className={styles.advDesc}>{adv.desc}</p>
@@ -338,7 +336,8 @@ export default function Home() {
           <div className={styles.marqueeTrack}>
             {/* Ligne 1 : Défilement vers la gauche */}
             {[...reviewsRow1, ...reviewsRow1].map((review, idx) => (
-              <div key={idx} className={styles.reviewCard}>
+              <div key={idx} className={`${styles.reviewCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {review.name.charAt(0)}
@@ -366,7 +365,8 @@ export default function Home() {
           <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
             {/* Ligne 2 : Défilement vers la droite */}
             {[...reviewsRow2, ...reviewsRow2].map((review, idx) => (
-              <div key={idx} className={styles.reviewCard}>
+              <div key={idx} className={`${styles.reviewCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {review.name.charAt(0)}

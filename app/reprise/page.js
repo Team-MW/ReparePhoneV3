@@ -6,6 +6,7 @@ export const metadata = {
 import { Recycle, DollarSign, Smartphone } from 'lucide-react';
 import FAQ from '@/components/FAQ';
 import EstimationSimulator from '@/components/EstimationSimulator';
+import BlueCardStreaks from '@/components/BlueCardStreaks';
 import styles from './page.module.css';
 
 export default function Reprise() {
@@ -44,17 +45,20 @@ export default function Reprise() {
           <h2 className="section-title">Pourquoi nous revendre votre smartphone ?</h2>
           
           <div className={styles.gridFeatures}>
-             <div className={styles.featureCard}>
+             <div className={`${styles.featureCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <DollarSign size={48} className={styles.icon} />
                 <h3>Paiement Immédiat</h3>
                 <p>Nous évaluons votre appareil en boutique en moins de 10 minutes. Le rachat est immédiat, vous repartez avec la somme en espèces ou par virement.</p>
              </div>
-             <div className={styles.featureCard}>
+             <div className={`${styles.featureCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <Smartphone size={48} className={styles.icon} />
                 <h3>Tous les états acceptés</h3>
                 <p>iPhone écran cassé ? Batterie HS ? Appareil oxydé ? Nous rachetons tous les types d'appareils, même non fonctionnels, pour leurs pièces ou pour les reconditionner.</p>
              </div>
-             <div className={styles.featureCard}>
+             <div className={`${styles.featureCard} rp-blue-card`}>
+                <BlueCardStreaks />
                 <Recycle size={48} className={styles.icon} />
                 <h3>Geste pour la planète</h3>
                 <p>Chaque téléphone recyclé ou reconditionné est une victoire écologique. Ne laissez plus dormir vos anciens iPhone ou Samsung dans vos tiroirs.</p>
