@@ -178,6 +178,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Jeux tendance — bandeau SEO */}
+      <section className={styles.gamesStrip} aria-label="Jeux vidéo populaires">
+        <div className={styles.gamesStripBg} aria-hidden="true"></div>
+        <div className={styles.gamesStripOverlay} aria-hidden="true"></div>
+        <div className={styles.gamesStripContent}>
+          <p className={styles.gamesStripTitle}>Jouez à vos jeux favoris</p>
+          <p className={styles.gamesStripList}>
+            FIFA 27 · GTA 6 · Call of Duty · Fortnite · EA Sports FC ·
+            NBA 2K · Minecraft · Rocket League · Elden Ring · Zelda ·
+            Gran Turismo · Assassin&apos;s Creed · Roblox · Valorant
+          </p>
+        </div>
+      </section>
+
       {/* Joystick Drift PS5 Section */}
       <section id="joystick-drift" className={`section ${styles.driftSection}`}>
         <div className={`container ${styles.driftOuter}`}>
