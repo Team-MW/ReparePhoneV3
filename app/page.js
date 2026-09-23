@@ -186,20 +186,20 @@ export default function Home() {
           <p className={styles.gamesStripTitle}>Jouez à vos jeux favoris</p>
           <nav className={styles.gamesStripList} aria-label="Jeux vidéo populaires PS5">
             {[
-              { name: 'FIFA 27', href: 'https://fr.wikipedia.org/wiki/FIFA_(s%C3%A9rie)' },
-              { name: 'GTA 6', href: 'https://fr.wikipedia.org/wiki/Grand_Theft_Auto_VI' },
-              { name: 'Call of Duty', href: 'https://fr.wikipedia.org/wiki/Call_of_Duty' },
-              { name: 'Fortnite', href: 'https://fr.wikipedia.org/wiki/Fortnite' },
-              { name: 'EA Sports FC', href: 'https://fr.wikipedia.org/wiki/EA_Sports_FC' },
-              { name: 'NBA 2K', href: 'https://fr.wikipedia.org/wiki/NBA_2K' },
-              { name: 'Minecraft', href: 'https://fr.wikipedia.org/wiki/Minecraft' },
-              { name: 'Rocket League', href: 'https://fr.wikipedia.org/wiki/Rocket_League' },
-              { name: 'Elden Ring', href: 'https://fr.wikipedia.org/wiki/Elden_Ring' },
-              { name: 'Zelda', href: 'https://fr.wikipedia.org/wiki/The_Legend_of_Zelda' },
-              { name: 'Gran Turismo', href: 'https://fr.wikipedia.org/wiki/Gran_Turismo_(s%C3%A9rie)' },
-              { name: "Assassin's Creed", href: 'https://fr.wikipedia.org/wiki/Assassin%27s_Creed' },
-              { name: 'Roblox', href: 'https://fr.wikipedia.org/wiki/Roblox' },
-              { name: 'Valorant', href: 'https://fr.wikipedia.org/wiki/Valorant' },
+              { name: 'FIFA 27', href: 'https://www.ea.com/games/ea-sports-fc' },
+              { name: 'GTA 6', href: 'https://www.rockstargames.com/VI' },
+              { name: 'Call of Duty', href: 'https://www.callofduty.com/' },
+              { name: 'Fortnite', href: 'https://www.fortnite.com/' },
+              { name: 'EA Sports FC', href: 'https://www.ea.com/games/ea-sports-fc' },
+              { name: 'NBA 2K', href: 'https://nba.2k.com/' },
+              { name: 'Minecraft', href: 'https://www.minecraft.net/' },
+              { name: 'Rocket League', href: 'https://www.rocketleague.com/' },
+              { name: 'Elden Ring', href: 'https://en.bandainamcoent.eu/elden-ring/elden-ring' },
+              { name: 'Zelda', href: 'https://www.zelda.com/' },
+              { name: 'Gran Turismo', href: 'https://www.gran-turismo.com/' },
+              { name: "Assassin's Creed", href: 'https://www.ubisoft.com/game/assassins-creed' },
+              { name: 'Roblox', href: 'https://www.roblox.com/' },
+              { name: 'Valorant', href: 'https://playvalorant.com/' },
             ].map((game, i, arr) => (
               <span key={game.name}>
                 <a
