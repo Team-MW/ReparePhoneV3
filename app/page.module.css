@@ -472,6 +472,22 @@
 .driftStreak:nth-child(3) { left: 68%; opacity: 0.5; animation-delay: 1.2s; }
 .driftStreak:nth-child(4) { left: 78%; height: 120%; opacity: 0.35; animation-delay: 1.8s; }
 
+.driftBgController {
+  position: absolute;
+  z-index: 0;
+  width: min(92vw, 920px);
+  height: auto;
+  right: -6%;
+  bottom: -18%;
+  object-fit: contain;
+  opacity: 0.12;
+  transform: rotate(18deg);
+  transform-origin: center center;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 40px rgba(59, 196, 255, 0.25));
+}
+
 @keyframes driftPulse {
   from { opacity: 0.45; filter: brightness(0.9); }
   to { opacity: 1; filter: brightness(1.25); }
@@ -674,6 +690,7 @@
   height: 500px;
   border: 0;
   border-radius: 26px;
+  object-fit: cover;
 }
 
 /* Bandeau jeux tendance (SEO) */
@@ -736,6 +753,20 @@
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.gamesStripLink {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.gamesStripLink:hover,
+.gamesStripLink:focus-visible {
+  color: #9aecff;
+  border-bottom-color: rgba(154, 236, 255, 0.7);
+  outline: none;
 }
 
 /* Avis Google Section */
@@ -912,6 +943,12 @@
   .driftPanel {
     padding: 3rem 2rem;
     min-height: auto;
+  }
+  .driftBgController {
+    width: min(110vw, 700px);
+    right: -18%;
+    bottom: -12%;
+    opacity: 0.1;
   }
   .driftCta {
     align-self: center;

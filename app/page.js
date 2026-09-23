@@ -184,11 +184,37 @@ export default function Home() {
         <div className={styles.gamesStripOverlay} aria-hidden="true"></div>
         <div className={styles.gamesStripContent}>
           <p className={styles.gamesStripTitle}>Jouez à vos jeux favoris</p>
-          <p className={styles.gamesStripList}>
-            FIFA 27 · GTA 6 · Call of Duty · Fortnite · EA Sports FC ·
-            NBA 2K · Minecraft · Rocket League · Elden Ring · Zelda ·
-            Gran Turismo · Assassin&apos;s Creed · Roblox · Valorant
-          </p>
+          <nav className={styles.gamesStripList} aria-label="Jeux vidéo populaires PS5">
+            {[
+              { name: 'FIFA 27', href: 'https://fr.wikipedia.org/wiki/FIFA_(s%C3%A9rie)' },
+              { name: 'GTA 6', href: 'https://fr.wikipedia.org/wiki/Grand_Theft_Auto_VI' },
+              { name: 'Call of Duty', href: 'https://fr.wikipedia.org/wiki/Call_of_Duty' },
+              { name: 'Fortnite', href: 'https://fr.wikipedia.org/wiki/Fortnite' },
+              { name: 'EA Sports FC', href: 'https://fr.wikipedia.org/wiki/EA_Sports_FC' },
+              { name: 'NBA 2K', href: 'https://fr.wikipedia.org/wiki/NBA_2K' },
+              { name: 'Minecraft', href: 'https://fr.wikipedia.org/wiki/Minecraft' },
+              { name: 'Rocket League', href: 'https://fr.wikipedia.org/wiki/Rocket_League' },
+              { name: 'Elden Ring', href: 'https://fr.wikipedia.org/wiki/Elden_Ring' },
+              { name: 'Zelda', href: 'https://fr.wikipedia.org/wiki/The_Legend_of_Zelda' },
+              { name: 'Gran Turismo', href: 'https://fr.wikipedia.org/wiki/Gran_Turismo_(s%C3%A9rie)' },
+              { name: "Assassin's Creed", href: 'https://fr.wikipedia.org/wiki/Assassin%27s_Creed' },
+              { name: 'Roblox', href: 'https://fr.wikipedia.org/wiki/Roblox' },
+              { name: 'Valorant', href: 'https://fr.wikipedia.org/wiki/Valorant' },
+            ].map((game, i, arr) => (
+              <span key={game.name}>
+                <a
+                  href={game.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.gamesStripLink}
+                  title={`${game.name} — page du jeu`}
+                >
+                  {game.name}
+                </a>
+                {i < arr.length - 1 ? ' · ' : ''}
+              </span>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -202,6 +228,15 @@ export default function Home() {
               <span className={styles.driftStreak}></span>
               <span className={styles.driftStreak}></span>
             </div>
+            <Image
+              src="/ps5-dualsense.webp"
+              alt=""
+              width={900}
+              height={680}
+              className={styles.driftBgController}
+              aria-hidden="true"
+              priority={false}
+            />
 
             <div className={styles.driftGrid}>
               <div className={styles.driftContent}>
@@ -251,16 +286,15 @@ export default function Home() {
               <div className={styles.driftVisual}>
                 <div className={styles.driftGlow} aria-hidden="true"></div>
                 <div className={styles.driftVideoContainer}>
-                  <iframe
-                    width="315"
-                    height="560"
-                    src="https://www.youtube.com/embed/KsYMrnMvYQ8?autoplay=1&mute=1&loop=1&playlist=KsYMrnMvYQ8&controls=0&rel=0"
-                    title="Réparation Joystick Drift manette PS5"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                  <video
                     className={styles.driftVideo}
-                  ></iframe>
+                    src="/joystick-drift.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    title="Réparation Joystick Drift manette PS5"
+                  />
                 </div>
               </div>
             </div>
