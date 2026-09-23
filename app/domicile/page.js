@@ -38,7 +38,7 @@ export default function Domicile() {
               {/* Floating Badge 1 */}
               <div className={`${styles.floatingBadge} ${styles.badgeTopLeft}`}>
                 <Star size={20} color="#FBBC04" fill="#FBBC04" />
-                <span className={styles.badgeText}>4.9/5 Avis</span>
+                <span className={styles.badgeText}>5/5 Avis</span>
               </div>
 
               {/* Floating Badge 2 */}

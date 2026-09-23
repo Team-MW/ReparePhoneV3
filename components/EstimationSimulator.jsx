@@ -57,7 +57,7 @@ export default function EstimationSimulator() {
     setSelections({ brand: '', model: '', condition: '' });
   };
 
-  // Générer un prix fictif mais réaliste basé sur les choix
+  // Générer un prix fictif mais réaliste basé sur les choix (-30 % reprise)
   const getEstimatedPrice = () => {
     let base = 250;
     if (selections.brand === 'apple') base += 150;
@@ -69,6 +69,8 @@ export default function EstimationSimulator() {
     if (selections.condition === 'used') base *= 0.8;
     if (selections.condition === 'broken') base *= 0.4;
     if (selections.condition === 'dead') base *= 0.1;
+
+    base *= 0.7; // Baisse de 30 % sur les prix de reprise
 
     return Math.max(10, Math.round(base / 10) * 10); // Minimum 10€, Arrondi à la dizaine
   };

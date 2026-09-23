@@ -19,7 +19,7 @@ export default function Footer() {
             Votre expert en réparation de téléphone à Toulouse. Service rapide, pièces d'origine, garantie 6 mois.
           </p>
           <div className={styles.rating}>
-            <strong>4.9/5</strong> ⭐ (200+ avis)
+            <strong>5/5</strong> ⭐⭐⭐⭐⭐ (200+ avis)
           </div>
           <a href="tel:0756916593" className={`btn-primary ${styles.callBtn}`}>
             ✨ Appeler maintenant

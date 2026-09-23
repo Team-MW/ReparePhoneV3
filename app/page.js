@@ -178,6 +178,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Joystick Drift PS5 Section */}
+      <section id="joystick-drift" className={`section ${styles.driftSection}`}>
+        <div className={`container ${styles.driftOuter}`}>
+          <div className={styles.driftPanel}>
+            <div className={styles.driftStreaks} aria-hidden="true">
+              <span className={styles.driftStreak}></span>
+              <span className={styles.driftStreak}></span>
+              <span className={styles.driftStreak}></span>
+              <span className={styles.driftStreak}></span>
+            </div>
+
+            <div className={styles.driftGrid}>
+              <div className={styles.driftContent}>
+                <div className={styles.driftPs5Logo} aria-label="PS5">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+                    <path d="M9.5 7.5v9.2c0 .9.5 1.4 1.3 1.4.3 0 .7-.1 1-.3l1.4-.8v-2.2l-1.6.9c-.2.1-.3 0-.3-.2V9.1l-1.8-.6zm5.1-1.3-3.5.9v13.1l3.5-.9V6.2zm5.9 3.6c1.4 0 2.3.7 2.3 2 0 1-.5 1.7-1.5 2l1.7.6c1.5.5 2.2 1.5 2.2 3 0 2-1.5 3.3-3.7 3.3h-6.5V9.8h5.5zm-2.7 4.6h2.6c.8 0 1.2-.4 1.2-1 0-.6-.4-1-1.2-1h-2.6v2zm0 4.8h2.9c.9 0 1.4-.4 1.4-1.1 0-.7-.5-1.1-1.4-1.1h-2.9v2.2zM4.3 9.5C2.4 10.1 1.5 11.3 1.5 13v6.3c0 1.5.9 2.4 2.3 2.4.7 0 1.3-.2 1.9-.5l1.6-.8v-2.3L5.5 19.7c-.2.1-.4.2-.6.2-.7 0-1-.4-1-1.2v-5.3c0-.6.2-1 .6-1.3.3-.2.8-.3 1.3-.3h.1l2.2.1V9.7L4.3 9.5z"/>
+                  </svg>
+                  <span>PS5</span>
+                </div>
+
+                <h2 className={styles.driftTitle}>
+                  <span className={styles.driftTitleLine}>Réparation de</span>
+                  <span className={styles.driftHighlight}>Joystick Drift</span>
+                  <span className={styles.driftTitleLine}>de votre manette PS5</span>
+                </h2>
+
+                <p className={styles.driftTagline}>
+                  <svg className={styles.driftPadIcon} viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                    <path d="M6.5 9.5h11a3.5 3.5 0 0 1 3.4 4.3l-1.1 4.5A3 3 0 0 1 16.9 21H7.1a3 3 0 0 1-2.9-2.7l-1.1-4.5A3.5 3.5 0 0 1 6.5 9.5Z"/>
+                    <circle cx="9" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+                    <circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+                    <path d="M8.2 11.2V8.8M15.8 11.2V8.8"/>
+                  </svg>
+                  Fini le drift, retrouvez le contrôle !
+                </p>
+
+                <ul className={styles.driftFeatures}>
+                  <li>Diagnostic gratuit en boutique</li>
+                  <li>Remplacement des modules joystick</li>
+                  <li>Réparation express &amp; test en jeu</li>
+                </ul>
+
+                <a href="/contact" className={styles.driftCta}>Réparer ma manette</a>
+              </div>
+
+              <div className={styles.driftVisual}>
+                <div className={styles.driftGlow} aria-hidden="true"></div>
+                <Image
+                  src="/ps5-dualsense.webp"
+                  alt="Manette PS5 DualSense — réparation joystick drift"
+                  width={640}
+                  height={480}
+                  className={styles.driftController}
+                  priority={false}
+                />
+                <div className={styles.driftVideoContainer}>
+                  <iframe
+                    width="315"
+                    height="560"
+                    src="https://www.youtube.com/embed/KsYMrnMvYQ8?autoplay=1&mute=1&loop=1&playlist=KsYMrnMvYQ8&controls=0&rel=0"
+                    title="Réparation Joystick Drift manette PS5"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className={styles.driftVideo}
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Avis Google Section */}
       <section className={styles.reviewsSection}>
         <div className="container">
@@ -191,11 +264,11 @@ export default function Home() {
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
-                <span><strong>4.9/5</strong> <GoogleStar size={18} /> basé sur plus de 200 avis Google</span>
+                <span><strong>5/5</strong> <GoogleStar size={18} /><GoogleStar size={18} /><GoogleStar size={18} /><GoogleStar size={18} /><GoogleStar size={18} /> basé sur plus de 200 avis Google</span>
               </div>
             </div>
             <a 
-              href="https://share.google/MAU1bgsXCWMs0Ecvv" 
+              href="https://g.page/r/CfpheghH-0_WEBM/review" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={`btn-secondary ${styles.reviewBtn}`}
