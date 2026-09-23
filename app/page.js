@@ -212,6 +212,17 @@ export default function Home() {
                   <span>PS5</span>
                 </div>
 
+                <div className={styles.driftControllerWrap}>
+                  <Image
+                    src="/ps5-dualsense.webp"
+                    alt="Manette PS5 DualSense — réparation joystick drift"
+                    width={640}
+                    height={480}
+                    className={styles.driftController}
+                    priority={false}
+                  />
+                </div>
+
                 <h2 className={styles.driftTitle}>
                   <span className={styles.driftTitleLine}>Réparation de</span>
                   <span className={styles.driftHighlight}>Joystick Drift</span>
@@ -239,14 +250,6 @@ export default function Home() {
 
               <div className={styles.driftVisual}>
                 <div className={styles.driftGlow} aria-hidden="true"></div>
-                <Image
-                  src="/ps5-dualsense.webp"
-                  alt="Manette PS5 DualSense — réparation joystick drift"
-                  width={640}
-                  height={480}
-                  className={styles.driftController}
-                  priority={false}
-                />
                 <div className={styles.driftVideoContainer}>
                   <iframe
                     width="315"
