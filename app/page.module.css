@@ -661,7 +661,7 @@
   height: 55%;
   right: 10%;
   top: 15%;
-  background: radial-gradient(ellipse at center, rgba(59, 196, 255, 0.45), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.18), transparent 70%);
   filter: blur(24px);
   pointer-events: none;
   z-index: 0;
@@ -677,10 +677,10 @@
   border-radius: 32px;
   overflow: hidden;
   background: #000;
-  border: 6px solid rgba(255, 255, 255, 0.95);
+  border: 6px solid #fff;
   box-shadow:
-    0 28px 55px rgba(0, 0, 0, 0.5),
-    0 0 32px rgba(59, 196, 255, 0.4);
+    0 20px 40px rgba(15, 23, 42, 0.15),
+    0 0 0 1px rgba(37, 99, 235, 0.08);
   animation: floatPhone 6s ease-in-out infinite alternate-reverse;
 }
 
