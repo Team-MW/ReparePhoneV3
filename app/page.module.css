@@ -427,10 +427,10 @@
   display: flex;
   align-items: center;
   background:
-    radial-gradient(ellipse 60% 80% at 75% 45%, rgba(0, 180, 255, 0.22), transparent 55%),
-    radial-gradient(ellipse 50% 60% at 20% 70%, rgba(0, 100, 255, 0.18), transparent 50%),
-    linear-gradient(145deg, #071338 0%, #0a1a4a 45%, #06102e 100%);
-  color: #fff;
+    radial-gradient(ellipse 55% 70% at 80% 40%, rgba(59, 130, 246, 0.12), transparent 60%),
+    radial-gradient(ellipse 45% 55% at 15% 75%, rgba(147, 197, 253, 0.2), transparent 55%),
+    linear-gradient(145deg, #f8fbff 0%, #eef6ff 45%, #f5f9ff 100%);
+  color: var(--secondary);
   padding: clamp(2.5rem, 5vh, 4.5rem) clamp(3rem, 6vw, 5.5rem) clamp(2.5rem, 5vh, 4.5rem) clamp(2rem, 5vw, 5rem);
   clip-path: polygon(
     1% 3%, 3% 1%, 8% 2%, 14% 0%, 22% 2%, 30% 0.5%, 40% 2%, 52% 0%, 62% 2%, 72% 0.5%, 82% 2%, 90% 0%, 96% 2%, 99% 4%,
@@ -438,7 +438,8 @@
     98% 97%, 92% 99%, 84% 98%, 74% 100%, 62% 98%, 50% 100%, 38% 98%, 26% 100%, 16% 98%, 8% 100%, 2% 97%,
     0% 90%, 2% 78%, 0% 66%, 2% 54%, 0% 42%, 2% 30%, 0% 18%, 1% 8%
   );
-  box-shadow: 0 30px 60px rgba(7, 19, 56, 0.35);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.08);
 }
 
 .driftStreaks {
@@ -451,18 +452,18 @@
 
 .driftStreak {
   position: absolute;
-  width: 3px;
+  width: 2px;
   height: 140%;
   top: -20%;
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(90, 220, 255, 0.15),
-    rgba(90, 220, 255, 0.85),
-    rgba(90, 220, 255, 0.15),
+    rgba(37, 99, 235, 0.08),
+    rgba(59, 130, 246, 0.35),
+    rgba(37, 99, 235, 0.08),
     transparent
   );
-  box-shadow: 0 0 18px 4px rgba(0, 200, 255, 0.55);
+  box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.2);
   transform: rotate(-38deg);
   animation: driftPulse 4s ease-in-out infinite alternate;
 }
@@ -480,12 +481,12 @@
   right: -6%;
   bottom: -18%;
   object-fit: contain;
-  opacity: 0.12;
+  opacity: 0.18;
   transform: rotate(18deg);
   transform-origin: center center;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 0 40px rgba(59, 196, 255, 0.25));
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.15));
 }
 
 @keyframes driftPulse {
@@ -513,7 +514,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.18));
   transform: rotate(18deg);
   transform-origin: center bottom;
   animation: driftFloatController 7s ease-in-out infinite alternate;
@@ -551,7 +552,7 @@
   font-weight: 800;
   font-size: clamp(1.4rem, 2vw, 1.75rem);
   letter-spacing: 0.08em;
-  color: #fff;
+  color: var(--secondary);
   margin-bottom: 0.25rem;
 }
 
@@ -560,7 +561,7 @@
   font-size: clamp(1.5rem, 2.8vw, 2.25rem);
   font-weight: 800;
   letter-spacing: 0.02em;
-  color: #fff;
+  color: var(--secondary);
 }
 
 .driftHighlight {
@@ -569,15 +570,13 @@
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-weight: 900;
   letter-spacing: 0.01em;
-  color: #5ad8ff;
-  text-shadow:
-    0 0 24px rgba(90, 216, 255, 0.55),
-    0 2px 0 rgba(0, 80, 140, 0.35);
-  background: linear-gradient(180deg, #9aecff 0%, #3bc4ff 55%, #1a9fd9 100%);
+  color: var(--primary);
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 55%, #1d4ed8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 12px rgba(59, 196, 255, 0.45));
+  filter: none;
+  text-shadow: none;
 }
 
 .driftTagline {
@@ -586,13 +585,13 @@
   gap: 0.65rem;
   margin: 0.5rem 0 0;
   font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--text-muted);
 }
 
 .driftPadIcon {
   flex-shrink: 0;
-  color: #5ad8ff;
-  filter: drop-shadow(0 0 6px rgba(90, 216, 255, 0.6));
+  color: var(--primary);
+  filter: none;
 }
 
 .driftFeatures {
@@ -608,7 +607,7 @@
   position: relative;
   padding-left: 1.35rem;
   font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--secondary);
 }
 
 .driftFeatures li::before {
@@ -619,8 +618,8 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: #5ad8ff;
-  box-shadow: 0 0 8px rgba(90, 216, 255, 0.8);
+  background: var(--primary);
+  box-shadow: none;
 }
 
 .driftCta {
@@ -633,16 +632,17 @@
   border-radius: 999px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: #06102e;
-  background: linear-gradient(135deg, #9aecff, #3bc4ff);
+  color: #fff;
+  background: var(--primary);
   text-decoration: none;
-  box-shadow: 0 8px 28px rgba(59, 196, 255, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .driftCta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(59, 196, 255, 0.55);
+  background: var(--primary-hover);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
 }
 
 .driftVisual {
